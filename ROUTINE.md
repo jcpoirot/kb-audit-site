@@ -1,4 +1,4 @@
-# Routine quotidienne d'audit SEO
+# Routine d'audit SEO (lundi et jeudi matin)
 
 Prompt de la routine cloud Claude Code (`/schedule`). Il est versionne ici pour que la routine
 et le depot evoluent ensemble : la routine se contente de lui demander de suivre ce fichier.
@@ -29,7 +29,7 @@ Suis exactement les instructions de ROUTINE.md (section « Deroulement ») pour 
    (titres `##`, listes `-`, gras `**`), dans cet ordre :
    - **Verdict** en une phrase : stable, amelioration ou regression, et pourquoi.
    - **Alertes** : chaque alerte expliquee en une ligne, avec l'impact SEO concret. Omettre si aucune.
-   - **Changements** depuis la veille sur les pages temoins et le site. Pour les pages tirees au
+   - **Changements** depuis le rapport precedent (`diff.previousDate`) sur les pages temoins et le site. Pour les pages tirees au
      hasard (`samePage: false`), ne pas presenter les ecarts comme des regressions : ce sont
      d'autres pages. Signaler en revanche un defaut nouveau qui n'apparait sur aucune page temoin.
    - **3 actions prioritaires** maximum, tirees des erreurs en cours.

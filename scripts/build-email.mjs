@@ -118,7 +118,7 @@ function buildHtml(report, synthese, options = {}) {
 
   // En-tete
   parts.push(`
-    <p style="margin:0;color:${COLORS.muted}">Audit SEO quotidien - ${esc(report.config.site)}</p>
+    <p style="margin:0;color:${COLORS.muted}">Audit SEO bihebdomadaire - ${esc(report.config.site)}</p>
     <h1 style="font-size:22px;margin:4px 0 12px">Rapport du ${esc(report.date)}</h1>
     <p style="font-size:16px;margin:0">Score global :
       <strong style="font-size:26px;color:${scoreColor(report.score)}">${report.score}/100</strong>
@@ -167,7 +167,7 @@ function buildHtml(report, synthese, options = {}) {
     ),
   );
 
-  // Changements depuis la veille
+  // Changements depuis le rapport precedent
   if (diff) {
     const blocks = [];
     for (const d of diff.pages) {
@@ -181,7 +181,7 @@ function buildHtml(report, synthese, options = {}) {
         for (const x of d.structure.removed) items.push(`<li>JSON-LD : chemin supprime <code>${esc(x)}</code></li>`);
       }
       if (!items.length) continue;
-      const note = d.samePage ? '' : ` <span style="color:${COLORS.muted};font-size:12px">(page differente de la veille : ecarts indicatifs)</span>`;
+      const note = d.samePage ? '' : ` <span style="color:${COLORS.muted};font-size:12px">(page differente du rapport precedent : ecarts indicatifs)</span>`;
       blocks.push(`<p style="margin:12px 0 2px"><strong>${esc(SLOT_LABELS[d.slot] ?? d.slot)}</strong>${note}</p>${ul(items.slice(0, 25))}`);
     }
     const siteItems = [
@@ -292,7 +292,7 @@ async function main() {
   if (failure) {
     subject = `ECHEC - Audit SEO kaufmanbroad.fr ${date}`;
     html = `<div style="font-family:Arial,sans-serif;font-size:14px">
-      <h2 style="color:${COLORS.error}">L'audit quotidien du ${esc(date)} n'a pas pu aboutir</h2>
+      <h2 style="color:${COLORS.error}">L'audit du ${esc(date)} n'a pas pu aboutir</h2>
       <pre style="white-space:pre-wrap;background:#f5f5f5;padding:12px">${esc(failure)}</pre>
       <p>Aucun rapport n'a ete produit : l'absence de mail de synthese n'est pas un signe que tout va bien.</p></div>`;
   } else {
