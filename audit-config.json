@@ -1,0 +1,44 @@
+{
+  "site": "https://www.kaufmanbroad.fr",
+  "robots": "https://www.kaufmanbroad.fr/robots.txt",
+  "sitemap": "https://www.kaufmanbroad.fr/sitemap.xml",
+  "fixedPages": [
+    {
+      "slot": "home",
+      "label": "Page d'accueil",
+      "url": "https://www.kaufmanbroad.fr/"
+    },
+    {
+      "slot": "programme-temoin",
+      "label": "Programme temoin (Orly)",
+      "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/programme/28071"
+    },
+    {
+      "slot": "lot-temoin",
+      "label": "Lot temoin (Orly)",
+      "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/lot/Appartement/28071_58"
+    }
+  ],
+  "randomPages": [
+    {
+      "slot": "programme-aleatoire",
+      "label": "Programme tire au hasard",
+      "pattern": "/programme/"
+    },
+    {
+      "slot": "lot-aleatoire",
+      "label": "Lot tire au hasard",
+      "pattern": "/lot/"
+    }
+  ],
+  "sitemapSampleSize": 10,
+  "sitemapDropAlertPercent": 10,
+  "email": {
+    "to": [
+      {
+        "email": "jcpoirot@dimake.io"
+      }
+    ]
+  },
+  "reportsUrl": "https://github.com/jcpoirot/kb-audit-site/blob/main/reports/"
+}

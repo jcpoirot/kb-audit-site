@@ -1,0 +1,61 @@
+Objet : Donnees structurees kaufmanbroad.fr - 3 anomalies bloquantes sur les pages programme et lot
+
+Bonjour,
+
+Audit des donnees structurees (JSON-LD) des pages programme et lot : 8 pages analysees, sur
+plusieurs regions, plusieurs programmes et les deux types de biens (appartements et maisons).
+Les constats sont identiques partout : ils viennent du gabarit, pas d'un contenu particulier.
+
+Scores : 52/100 sur une page programme, 55/100 sur une page lot.
+
+
+LES 3 POINTS BLOQUANTS
+
+1. Le type "HousingComplex" n'existe pas dans schema.org.
+   C'est pourtant l'entite principale de toutes nos pages programme. Verification faite contre
+   le vocabulaire officiel : seuls "ApartmentComplex" et "GatedResidenceCommunity" existent.
+   Consequence : l'entite principale des pages programme est ignoree par les moteurs, et le
+   rattachement lot -> programme est casse (le isPartOf des pages lot pointe vers ce meme type).
+   Correctif : remplacer HousingComplex par ApartmentComplex.
+
+2. Aucun prix ne peut remonter dans les resultats Google.
+   Les proprietes offers, sku, brand et category sont portees par "Apartment" (pages lot) et
+   "HousingComplex" (pages programme). Google ne lit price, priceCurrency et availability que
+   sur Product, Service ou Event. Nos prix sont donc invisibles dans le SERP alors que la
+   donnee est bien presente dans le balisage.
+   Correctif : declarer un type mixte, par exemple "@type": ["Apartment", "Product"].
+
+3. Balise canonique et og:url en URL relative.
+   Les deux gabarits servent href="/achat-immobilier-neuf/..." au lieu d'une URL absolue.
+   Google demande explicitement une URL absolue pour la canonique ; une URL relative peut etre
+   mal resolue. Meme probleme sur og:url, ce qui casse aussi les apercus de partage sociaux.
+   Correctif : prefixer par https://www.kaufmanbroad.fr
+
+
+POINTS SECONDAIRES
+
+- Pages lot : le dernier maillon du fil d'Ariane pointe vers /programme/28071/lot/Appartement/
+  28071_58 alors que l'URL reelle est /lot/Appartement/28071_58. Une divergence sur ce maillon
+  peut conduire Google a ignorer le fil d'Ariane entier.
+- La propriete "developer" (rattachement au promoteur) n'existe pas dans schema.org :
+  l'information est perdue.
+- Les descriptions contiennent du HTML non decode (&nbsp;, <br/>), affiche tel quel dans les
+  resultats enrichis.
+- addressRegion vaut "94" sur les pages programme et "Ile-de-France" sur les pages lot :
+  incoherence entre gabarits, et le numero de departement n'est pas la valeur attendue.
+- Le prix haut de fourchette (highPrice) n'apparait pas dans le texte visible de la page
+  programme. Google exige que les donnees structurees decrivent un contenu visible.
+- Une seule image declaree (Google en recommande trois : 16:9, 4:3, 1:1), og:type /
+  og:site_name / og:locale absents, DPE non balise.
+
+
+SUITE PROPOSEE
+
+Les points 1 a 3 sont des corrections de gabarit, sans impact sur le contenu ni sur le
+back-office. A traiter en priorite, puis nouvel audit pour validation.
+
+J'ai developpe un outil interne qui automatise cette analyse : on colle une URL, on obtient le
+rapport detaille avec le correctif suggere pour chaque constat. Je peux le partager ou faire
+tourner un lot d'URLs.
+
+Bien a vous,

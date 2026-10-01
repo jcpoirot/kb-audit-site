@@ -1,0 +1,7 @@
+node_modules/
+.claude/settings.local.json
+# Mail genere par npm run email (envoye par la routine, pas versionne)
+reports/*.email.html
+reports/*.email.json
+# Exports de conteneur GTM : configuration interne, hors depot
+GTM/

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Boîte à outils SEO — kaufmanbroad.fr</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='13' font-size='14'>🔎</text></svg>" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">SEO</span>
+        <div>
+          <h1>Boîte à outils SEO</h1>
+          <p class="brand-sub">Analyse des données structurées &amp; du head — kaufmanbroad.fr</p>
+        </div>
+      </div>
+
+      <form id="analyze-form" class="search">
+        <input
+          id="url-input"
+          type="url"
+          name="url"
+          required
+          spellcheck="false"
+          placeholder="https://www.kaufmanbroad.fr/achat-immobilier-neuf/…"
+          list="recent-urls"
+          autocomplete="off"
+        />
+        <datalist id="recent-urls"></datalist>
+        <button id="analyze-btn" type="submit">Analyser</button>
+      </form>
+
+      <div class="presets">
+        <span class="presets-label">Exemples&nbsp;:</span>
+        <button
+          type="button"
+          class="chip chip-preset"
+          data-url="https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/programme/28071"
+        >
+          Page programme
+        </button>
+        <button
+          type="button"
+          class="chip chip-preset"
+          data-url="https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/lot/Appartement/28071_58"
+        >
+          Page lot
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section id="placeholder" class="placeholder">
+        <h2>Collez l'URL d'une page à auditer</h2>
+        <p>
+          L'outil télécharge le HTML servi, extrait les blocs <code>application/ld+json</code>, les confronte au
+          vocabulaire officiel schema.org et aux exigences de la galerie de résultats enrichis Google, puis vérifie
+          leur cohérence avec le contenu réellement affiché.
+        </p>
+        <ul class="placeholder-list">
+          <li><strong>Syntaxe JSON-LD</strong> — parsing, <code>@context</code>, valeurs vides, HTML échappé, URLs relatives</li>
+          <li><strong>Vocabulaire schema.org</strong> — types et propriétés réellement existants, héritage, ranges, termes obsolètes</li>
+          <li><strong>Résultats enrichis Google</strong> — champs requis et recommandés, éligibilité par type de résultat</li>
+          <li><strong>Cohérence page / balisage</strong> — H1, canonique, prix visible, fil d'Ariane</li>
+          <li><strong>Head &amp; meta</strong> — title, description, canonique, Open Graph, hiérarchie de titres</li>
+        </ul>
+      </section>
+
+      <section id="loading" class="loading" hidden>
+        <div class="spinner" aria-hidden="true"></div>
+        <p id="loading-text">Téléchargement de la page…</p>
+      </section>
+
+      <section id="error" class="error-box" hidden>
+        <h2>Analyse impossible</h2>
+        <p id="error-text"></p>
+      </section>
+
+      <section id="report" hidden>
+        <div class="report-head">
+          <div class="score-ring" id="score-ring">
+            <svg viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="ring-track" cx="60" cy="60" r="52" />
+              <circle class="ring-value" id="ring-value" cx="60" cy="60" r="52" />
+            </svg>
+            <div class="score-ring-label">
+              <strong id="score-number">—</strong>
+              <span>/ 100</span>
+            </div>
+          </div>
+
+          <div class="report-meta">
+            <a id="report-url" class="report-url" href="#" target="_blank" rel="noreferrer"></a>
+            <div class="badges" id="report-badges"></div>
+            <div class="counts" id="report-counts"></div>
+            <div class="report-actions">
+              <button type="button" id="export-json" class="ghost">Exporter le rapport (JSON)</button>
+              <button type="button" id="copy-summary" class="ghost">Copier la synthèse</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="features" id="features"></div>
+
+        <nav class="tabs" id="tabs" role="tablist"></nav>
+        <div id="panels"></div>
+      </section>
+    </main>
+
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

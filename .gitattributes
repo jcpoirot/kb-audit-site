@@ -1,0 +1,3 @@
+* text=auto eol=lf
+# CSV pour Excel : CRLF et BOM voulus
+*.csv -text

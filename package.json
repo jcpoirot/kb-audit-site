@@ -1,0 +1,16 @@
+{
+  "name": "kb-seo-toolkit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Boite a outils SEO pour kaufmanbroad.fr - analyse des donnees structurees et du head",
+  "scripts": {
+    "start": "node server.js",
+    "vocab": "node scripts/build-vocabulary.mjs",
+    "audit": "node scripts/audit-site.mjs",
+    "email": "node scripts/build-email.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
