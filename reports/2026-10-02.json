@@ -1,0 +1,1040 @@
+{
+  "date": "2026-10-02",
+  "generatedAt": "2026-10-02T07:22:38.843Z",
+  "elapsedMs": 362,
+  "config": {
+    "site": "https://www.kaufmanbroad.fr",
+    "sitemap": "https://www.kaufmanbroad.fr/sitemap.xml"
+  },
+  "score": 66,
+  "site": {
+    "issues": [
+      {
+        "severity": "error",
+        "id": "site-robots-status",
+        "category": "Site",
+        "title": "robots.txt repond HTTP 403",
+        "detail": null,
+        "path": null,
+        "fix": "Servir un robots.txt en 200.",
+        "docs": "https://developers.google.com/search/docs/crawling-indexing/robots/intro",
+        "value": null
+      },
+      {
+        "severity": "error",
+        "id": "site-sitemap-unreachable",
+        "category": "Site",
+        "title": "Sitemap illisible",
+        "detail": null,
+        "path": null,
+        "fix": "Verifier que le sitemap repond en 200 avec un XML valide.",
+        "docs": null,
+        "value": "HTTP 403"
+      },
+      {
+        "severity": "error",
+        "id": "site-no-candidate",
+        "category": "Site",
+        "title": "Aucune URL \"/programme/\" dans le sitemap pour le tirage au hasard",
+        "detail": null,
+        "path": null,
+        "fix": null,
+        "docs": null,
+        "value": "programme-aleatoire"
+      },
+      {
+        "severity": "error",
+        "id": "site-no-candidate",
+        "category": "Site",
+        "title": "Aucune URL \"/lot/\" dans le sitemap pour le tirage au hasard",
+        "detail": null,
+        "path": null,
+        "fix": null,
+        "docs": null,
+        "value": "lot-aleatoire"
+      }
+    ],
+    "score": 60,
+    "sitemap": null
+  },
+  "pages": [
+    {
+      "slot": "home",
+      "label": "Page d'accueil",
+      "kind": "fixe",
+      "requestedUrl": "https://www.kaufmanbroad.fr/",
+      "blocked": true,
+      "responseSample": "Host not in allowlist: www.kaufmanbroad.fr. Add this host to your network egress settings to allow access.",
+      "url": "https://www.kaufmanbroad.fr/",
+      "template": "home",
+      "mainType": null,
+      "fetch": {
+        "requestedUrl": "https://www.kaufmanbroad.fr/",
+        "finalUrl": "https://www.kaufmanbroad.fr/",
+        "status": 403,
+        "redirected": false,
+        "contentType": "text/plain",
+        "xRobotsTag": null,
+        "elapsedMs": 4,
+        "bytes": 106
+      },
+      "score": 69,
+      "counts": {
+        "error": 6,
+        "warning": 10,
+        "info": 4,
+        "success": 0
+      },
+      "tools": [
+        {
+          "key": "structured-data",
+          "label": "Donnees structurees",
+          "score": 79,
+          "counts": {
+            "error": 2,
+            "warning": 0,
+            "info": 1,
+            "success": 0
+          }
+        },
+        {
+          "key": "head-meta",
+          "label": "Head & meta",
+          "score": 41,
+          "counts": {
+            "error": 2,
+            "warning": 9,
+            "info": 3,
+            "success": 0
+          }
+        },
+        {
+          "key": "http-indexing",
+          "label": "HTTP & indexation",
+          "score": 76,
+          "counts": {
+            "error": 2,
+            "warning": 1,
+            "info": 0,
+            "success": 0
+          }
+        }
+      ],
+      "issues": [
+        {
+          "severity": "error",
+          "id": "jsonld-absent",
+          "category": "Syntaxe JSON-LD",
+          "title": "Aucun bloc JSON-LD sur la page",
+          "detail": "La page ne contient aucun <script type=\"application/ld+json\">. Sans donnees structurees, aucun resultat enrichi n'est possible.",
+          "path": null,
+          "fix": "Ajouter un bloc JSON-LD decrivant l'entite principale de la page.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "error",
+          "id": "kb-main-entity-missing",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "Page d'accueil sans entite Organization (ou RealEstateAgent)",
+          "detail": "Types racines detectes : aucun type racine.",
+          "path": null,
+          "fix": "Declarer l'entite principale avec un type approprie (Organization (ou RealEstateAgent)).",
+          "docs": "https://schema.org/Accommodation",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "error",
+          "id": "meta-title-missing",
+          "category": "Head & meta",
+          "title": "Balise <title> absente",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter un title unique et descriptif.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "error",
+          "id": "meta-h1-missing",
+          "category": "Head & meta",
+          "title": "Aucun H1",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter un H1 unique.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "error",
+          "id": "http-blocked",
+          "category": "HTTP & indexation",
+          "title": "Page de blocage servie a la place du contenu",
+          "detail": "Le serveur (WAF / CDN) a renvoye une page de challenge ou de refus. Les autres constats de cette page ne sont pas fiables.",
+          "path": null,
+          "fix": "Autoriser l'IP ou le user-agent de l'audit, ou verifier qu'un robot d'exploration legitime n'est pas bloque lui aussi.",
+          "docs": null,
+          "value": "HTTP 403",
+          "tool": "http-indexing"
+        },
+        {
+          "severity": "error",
+          "id": "tracking-gtm-missing",
+          "category": "Tracking",
+          "title": "Conteneur GTM-5V98P2X absent du HTML",
+          "detail": "Sans le conteneur, aucune mesure d'audience ni de conversion sur cette page.",
+          "path": null,
+          "fix": "Verifier que le composant GTM (gtmId GTM-5V98P2X) est bien rendu sur ce gabarit.",
+          "docs": null,
+          "value": null,
+          "tool": "http-indexing"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-description-missing",
+          "category": "Head & meta",
+          "title": "Meta description absente",
+          "detail": "Google genere alors un extrait arbitraire depuis le contenu.",
+          "path": null,
+          "fix": "Ajouter une meta description unique.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-canonical-missing",
+          "category": "Head & meta",
+          "title": "Balise canonique absente",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter <link rel=\"canonical\" href=\"URL absolue\">.",
+          "docs": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-lang-missing",
+          "category": "Head & meta",
+          "title": "Attribut lang absent sur <html>",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter lang=\"fr\".",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-viewport-missing",
+          "category": "Head & meta",
+          "title": "Meta viewport absente",
+          "detail": "Indispensable pour l'indexation mobile-first.",
+          "path": null,
+          "fix": "Ajouter <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-title",
+          "category": "Head & meta",
+          "title": "og:title absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:title\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-description",
+          "category": "Head & meta",
+          "title": "og:description absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:description\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-url",
+          "category": "Head & meta",
+          "title": "og:url absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:url\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-type",
+          "category": "Head & meta",
+          "title": "og:type absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:type\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-image-missing",
+          "category": "Head & meta",
+          "title": "og:image absent",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter une image de partage de 1200x630 px.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "http-content-type",
+          "category": "HTTP & indexation",
+          "title": "Content-Type inattendu",
+          "detail": null,
+          "path": null,
+          "fix": "Servir la page en text/html; charset=utf-8.",
+          "docs": null,
+          "value": "text/plain",
+          "tool": "http-indexing"
+        },
+        {
+          "severity": "info",
+          "id": "kb-no-organization",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "Aucune entite Organization sur la page",
+          "detail": "Declarer Kaufman & Broad (RealEstateAgent ou Organization) avec logo et sameAs consolide l'entite de marque aupres de Google.",
+          "path": null,
+          "fix": "Ajouter un bloc Organization racine, ou le referencer via @id depuis les autres entites.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/organization",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "meta-og-sitename",
+          "category": "Head & meta",
+          "title": "og:site_name absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:site_name\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "meta-og-locale",
+          "category": "Head & meta",
+          "title": "og:locale absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:locale\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "meta-twitter-card",
+          "category": "Head & meta",
+          "title": "twitter:card absent",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter <meta name=\"twitter:card\" content=\"summary_large_image\">.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        }
+      ],
+      "structure": [],
+      "headShape": []
+    },
+    {
+      "slot": "programme-temoin",
+      "label": "Programme temoin (Orly)",
+      "kind": "fixe",
+      "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/programme/28071",
+      "blocked": true,
+      "responseSample": "Host not in allowlist: www.kaufmanbroad.fr. Add this host to your network egress settings to allow access.",
+      "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/programme/28071",
+      "template": "programme",
+      "mainType": null,
+      "fetch": {
+        "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/programme/28071",
+        "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/programme/28071",
+        "status": 403,
+        "redirected": false,
+        "contentType": "text/plain",
+        "xRobotsTag": null,
+        "elapsedMs": 3,
+        "bytes": 106
+      },
+      "score": 67,
+      "counts": {
+        "error": 6,
+        "warning": 11,
+        "info": 4,
+        "success": 0
+      },
+      "tools": [
+        {
+          "key": "structured-data",
+          "label": "Donnees structurees",
+          "score": 75,
+          "counts": {
+            "error": 2,
+            "warning": 1,
+            "info": 1,
+            "success": 0
+          }
+        },
+        {
+          "key": "head-meta",
+          "label": "Head & meta",
+          "score": 41,
+          "counts": {
+            "error": 2,
+            "warning": 9,
+            "info": 3,
+            "success": 0
+          }
+        },
+        {
+          "key": "http-indexing",
+          "label": "HTTP & indexation",
+          "score": 76,
+          "counts": {
+            "error": 2,
+            "warning": 1,
+            "info": 0,
+            "success": 0
+          }
+        }
+      ],
+      "issues": [
+        {
+          "severity": "error",
+          "id": "jsonld-absent",
+          "category": "Syntaxe JSON-LD",
+          "title": "Aucun bloc JSON-LD sur la page",
+          "detail": "La page ne contient aucun <script type=\"application/ld+json\">. Sans donnees structurees, aucun resultat enrichi n'est possible.",
+          "path": null,
+          "fix": "Ajouter un bloc JSON-LD decrivant l'entite principale de la page.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "error",
+          "id": "kb-main-entity-missing",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "Page programme sans entite ApartmentComplex, ou un autre sous-type de Residence",
+          "detail": "Types racines detectes : aucun type racine.",
+          "path": null,
+          "fix": "Declarer l'entite principale avec un type approprie (ApartmentComplex, ou un autre sous-type de Residence).",
+          "docs": "https://schema.org/Accommodation",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "error",
+          "id": "meta-title-missing",
+          "category": "Head & meta",
+          "title": "Balise <title> absente",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter un title unique et descriptif.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "error",
+          "id": "meta-h1-missing",
+          "category": "Head & meta",
+          "title": "Aucun H1",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter un H1 unique.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "error",
+          "id": "http-blocked",
+          "category": "HTTP & indexation",
+          "title": "Page de blocage servie a la place du contenu",
+          "detail": "Le serveur (WAF / CDN) a renvoye une page de challenge ou de refus. Les autres constats de cette page ne sont pas fiables.",
+          "path": null,
+          "fix": "Autoriser l'IP ou le user-agent de l'audit, ou verifier qu'un robot d'exploration legitime n'est pas bloque lui aussi.",
+          "docs": null,
+          "value": "HTTP 403",
+          "tool": "http-indexing"
+        },
+        {
+          "severity": "error",
+          "id": "tracking-gtm-missing",
+          "category": "Tracking",
+          "title": "Conteneur GTM-5V98P2X absent du HTML",
+          "detail": "Sans le conteneur, aucune mesure d'audience ni de conversion sur cette page.",
+          "path": null,
+          "fix": "Verifier que le composant GTM (gtmId GTM-5V98P2X) est bien rendu sur ce gabarit.",
+          "docs": null,
+          "value": null,
+          "tool": "http-indexing"
+        },
+        {
+          "severity": "warning",
+          "id": "google-breadcrumb-missing",
+          "category": "Resultats enrichis Google",
+          "title": "Pas de fil d'Ariane structure",
+          "detail": "Sans BreadcrumbList, Google affiche l'URL brute sous le titre du resultat.",
+          "path": null,
+          "fix": "Ajouter un BreadcrumbList reprenant le chemin region > departement > ville > programme.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/breadcrumb",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-description-missing",
+          "category": "Head & meta",
+          "title": "Meta description absente",
+          "detail": "Google genere alors un extrait arbitraire depuis le contenu.",
+          "path": null,
+          "fix": "Ajouter une meta description unique.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-canonical-missing",
+          "category": "Head & meta",
+          "title": "Balise canonique absente",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter <link rel=\"canonical\" href=\"URL absolue\">.",
+          "docs": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-lang-missing",
+          "category": "Head & meta",
+          "title": "Attribut lang absent sur <html>",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter lang=\"fr\".",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-viewport-missing",
+          "category": "Head & meta",
+          "title": "Meta viewport absente",
+          "detail": "Indispensable pour l'indexation mobile-first.",
+          "path": null,
+          "fix": "Ajouter <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-title",
+          "category": "Head & meta",
+          "title": "og:title absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:title\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-description",
+          "category": "Head & meta",
+          "title": "og:description absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:description\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-url",
+          "category": "Head & meta",
+          "title": "og:url absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:url\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-type",
+          "category": "Head & meta",
+          "title": "og:type absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:type\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-image-missing",
+          "category": "Head & meta",
+          "title": "og:image absent",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter une image de partage de 1200x630 px.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "http-content-type",
+          "category": "HTTP & indexation",
+          "title": "Content-Type inattendu",
+          "detail": null,
+          "path": null,
+          "fix": "Servir la page en text/html; charset=utf-8.",
+          "docs": null,
+          "value": "text/plain",
+          "tool": "http-indexing"
+        },
+        {
+          "severity": "info",
+          "id": "kb-no-organization",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "Aucune entite Organization sur la page",
+          "detail": "Declarer Kaufman & Broad (RealEstateAgent ou Organization) avec logo et sameAs consolide l'entite de marque aupres de Google.",
+          "path": null,
+          "fix": "Ajouter un bloc Organization racine, ou le referencer via @id depuis les autres entites.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/organization",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "meta-og-sitename",
+          "category": "Head & meta",
+          "title": "og:site_name absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:site_name\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "meta-og-locale",
+          "category": "Head & meta",
+          "title": "og:locale absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:locale\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "meta-twitter-card",
+          "category": "Head & meta",
+          "title": "twitter:card absent",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter <meta name=\"twitter:card\" content=\"summary_large_image\">.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        }
+      ],
+      "structure": [],
+      "headShape": []
+    },
+    {
+      "slot": "lot-temoin",
+      "label": "Lot temoin (Orly)",
+      "kind": "fixe",
+      "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/lot/Appartement/28071_58",
+      "blocked": true,
+      "responseSample": "Host not in allowlist: www.kaufmanbroad.fr. Add this host to your network egress settings to allow access.",
+      "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/lot/Appartement/28071_58",
+      "template": "lot",
+      "mainType": null,
+      "fetch": {
+        "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/lot/Appartement/28071_58",
+        "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/lot/Appartement/28071_58",
+        "status": 403,
+        "redirected": false,
+        "contentType": "text/plain",
+        "xRobotsTag": null,
+        "elapsedMs": 3,
+        "bytes": 106
+      },
+      "score": 67,
+      "counts": {
+        "error": 6,
+        "warning": 11,
+        "info": 4,
+        "success": 0
+      },
+      "tools": [
+        {
+          "key": "structured-data",
+          "label": "Donnees structurees",
+          "score": 75,
+          "counts": {
+            "error": 2,
+            "warning": 1,
+            "info": 1,
+            "success": 0
+          }
+        },
+        {
+          "key": "head-meta",
+          "label": "Head & meta",
+          "score": 41,
+          "counts": {
+            "error": 2,
+            "warning": 9,
+            "info": 3,
+            "success": 0
+          }
+        },
+        {
+          "key": "http-indexing",
+          "label": "HTTP & indexation",
+          "score": 76,
+          "counts": {
+            "error": 2,
+            "warning": 1,
+            "info": 0,
+            "success": 0
+          }
+        }
+      ],
+      "issues": [
+        {
+          "severity": "error",
+          "id": "jsonld-absent",
+          "category": "Syntaxe JSON-LD",
+          "title": "Aucun bloc JSON-LD sur la page",
+          "detail": "La page ne contient aucun <script type=\"application/ld+json\">. Sans donnees structurees, aucun resultat enrichi n'est possible.",
+          "path": null,
+          "fix": "Ajouter un bloc JSON-LD decrivant l'entite principale de la page.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "error",
+          "id": "kb-main-entity-missing",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "Page lot sans entite Apartment / House (sous-types de Accommodation)",
+          "detail": "Types racines detectes : aucun type racine.",
+          "path": null,
+          "fix": "Declarer l'entite principale avec un type approprie (Apartment / House (sous-types de Accommodation)).",
+          "docs": "https://schema.org/Accommodation",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "error",
+          "id": "meta-title-missing",
+          "category": "Head & meta",
+          "title": "Balise <title> absente",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter un title unique et descriptif.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "error",
+          "id": "meta-h1-missing",
+          "category": "Head & meta",
+          "title": "Aucun H1",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter un H1 unique.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "error",
+          "id": "http-blocked",
+          "category": "HTTP & indexation",
+          "title": "Page de blocage servie a la place du contenu",
+          "detail": "Le serveur (WAF / CDN) a renvoye une page de challenge ou de refus. Les autres constats de cette page ne sont pas fiables.",
+          "path": null,
+          "fix": "Autoriser l'IP ou le user-agent de l'audit, ou verifier qu'un robot d'exploration legitime n'est pas bloque lui aussi.",
+          "docs": null,
+          "value": "HTTP 403",
+          "tool": "http-indexing"
+        },
+        {
+          "severity": "error",
+          "id": "tracking-gtm-missing",
+          "category": "Tracking",
+          "title": "Conteneur GTM-5V98P2X absent du HTML",
+          "detail": "Sans le conteneur, aucune mesure d'audience ni de conversion sur cette page.",
+          "path": null,
+          "fix": "Verifier que le composant GTM (gtmId GTM-5V98P2X) est bien rendu sur ce gabarit.",
+          "docs": null,
+          "value": null,
+          "tool": "http-indexing"
+        },
+        {
+          "severity": "warning",
+          "id": "google-breadcrumb-missing",
+          "category": "Resultats enrichis Google",
+          "title": "Pas de fil d'Ariane structure",
+          "detail": "Sans BreadcrumbList, Google affiche l'URL brute sous le titre du resultat.",
+          "path": null,
+          "fix": "Ajouter un BreadcrumbList reprenant le chemin region > departement > ville > programme.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/breadcrumb",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-description-missing",
+          "category": "Head & meta",
+          "title": "Meta description absente",
+          "detail": "Google genere alors un extrait arbitraire depuis le contenu.",
+          "path": null,
+          "fix": "Ajouter une meta description unique.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-canonical-missing",
+          "category": "Head & meta",
+          "title": "Balise canonique absente",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter <link rel=\"canonical\" href=\"URL absolue\">.",
+          "docs": "https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-lang-missing",
+          "category": "Head & meta",
+          "title": "Attribut lang absent sur <html>",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter lang=\"fr\".",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-viewport-missing",
+          "category": "Head & meta",
+          "title": "Meta viewport absente",
+          "detail": "Indispensable pour l'indexation mobile-first.",
+          "path": null,
+          "fix": "Ajouter <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-title",
+          "category": "Head & meta",
+          "title": "og:title absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:title\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-description",
+          "category": "Head & meta",
+          "title": "og:description absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:description\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-url",
+          "category": "Head & meta",
+          "title": "og:url absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:url\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-type",
+          "category": "Head & meta",
+          "title": "og:type absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:type\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-image-missing",
+          "category": "Head & meta",
+          "title": "og:image absent",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter une image de partage de 1200x630 px.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "http-content-type",
+          "category": "HTTP & indexation",
+          "title": "Content-Type inattendu",
+          "detail": null,
+          "path": null,
+          "fix": "Servir la page en text/html; charset=utf-8.",
+          "docs": null,
+          "value": "text/plain",
+          "tool": "http-indexing"
+        },
+        {
+          "severity": "info",
+          "id": "kb-no-organization",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "Aucune entite Organization sur la page",
+          "detail": "Declarer Kaufman & Broad (RealEstateAgent ou Organization) avec logo et sameAs consolide l'entite de marque aupres de Google.",
+          "path": null,
+          "fix": "Ajouter un bloc Organization racine, ou le referencer via @id depuis les autres entites.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/organization",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "meta-og-sitename",
+          "category": "Head & meta",
+          "title": "og:site_name absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:site_name\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "meta-og-locale",
+          "category": "Head & meta",
+          "title": "og:locale absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:locale\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "meta-twitter-card",
+          "category": "Head & meta",
+          "title": "twitter:card absent",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter <meta name=\"twitter:card\" content=\"summary_large_image\">.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        }
+      ],
+      "structure": [],
+      "headShape": []
+    }
+  ],
+  "blocked": {
+    "reason": "Aucune page du site n'a pu etre lue : reponses de blocage ou erreurs reseau.",
+    "statuses": [
+      {
+        "slot": "home",
+        "url": "https://www.kaufmanbroad.fr/",
+        "status": 403,
+        "error": null
+      },
+      {
+        "slot": "programme-temoin",
+        "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/programme/28071",
+        "status": 403,
+        "error": null
+      },
+      {
+        "slot": "lot-temoin",
+        "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/lot/Appartement/28071_58",
+        "status": 403,
+        "error": null
+      }
+    ],
+    "sample": "Host not in allowlist: www.kaufmanbroad.fr. Add this host to your network egress settings to allow access."
+  },
+  "diff": null,
+  "alerts": [
+    {
+      "scope": "site",
+      "id": "audit-blocked",
+      "title": "Audit non realise : acces au site bloque",
+      "value": "Host not in allowlist: www.kaufmanbroad.fr. Add this host to your network egress settings to allow access."
+    }
+  ]
+}
