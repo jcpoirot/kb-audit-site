@@ -24,6 +24,8 @@ Suis exactement les instructions de ROUTINE.md (section « Deroulement ») pour 
      comme a l'etape 5, puis s'arreter.
 
 2. Lire le rapport du jour : `alerts`, `diff`, `site`, et pour chaque page `score`, `counts`, `issues`.
+   - Si le rapport contient `blocked` (aucune page lisible : proxy sortant ou WAF), ne pas ecrire
+     de synthese : passer directement a l'etape 4, le mail genere explique deja le blocage.
 
 3. Ecrire `reports/AAAA-MM-JJ.synthese.md`, en francais, 15 lignes maximum, en Markdown simple
    (titres `##`, listes `-`, gras `**`), dans cet ordre :
@@ -40,7 +42,8 @@ Suis exactement les instructions de ROUTINE.md (section « Deroulement ») pour 
 4. Lancer `npm run email`, puis commiter `reports/AAAA-MM-JJ.json`, `reports/AAAA-MM-JJ.csv` et
    `reports/AAAA-MM-JJ.synthese.md` (message : `audit: rapport du AAAA-MM-JJ`) et pousser sur `main`.
    Le mail contient des liens vers ces fichiers sur GitHub : le push doit preceder l'envoi.
-   Ne modifier aucun autre fichier du depot.
+   Ne modifier aucun autre fichier du depot. Si le push echoue, envoyer quand meme le mail et
+   l'indiquer en tete du `body` texte (les liens CSV / JSON du mail seront alors en 404).
 
 5. Envoyer le mail avec l'outil Gmail `send_message` :
    - `to` et `subject` : ceux de `reports/AAAA-MM-JJ.email.json` ;

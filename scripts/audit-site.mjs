@@ -13,6 +13,7 @@ import { analyzeHtml } from '../src/analyze.js';
 import { fetchPage } from '../src/fetch-page.js';
 import { issue, countBySeverity, scoreOf, sortIssues } from '../src/issues.js';
 import { looksBlocked } from '../src/checks/http.js';
+import { toText } from '../src/html.js';
 
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const REPORTS_DIR = join(ROOT, 'reports');
@@ -59,12 +60,21 @@ async function loadPreviousReport(date) {
   } catch {
     return null;
   }
-  const previous = files
+  const candidates = files
     .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f) && f.slice(0, 10) < date)
     .sort()
-    .pop();
-  if (!previous) return null;
-  return JSON.parse(await readFile(join(REPORTS_DIR, previous), 'utf8'));
+    .reverse();
+  // Un audit bloque (WAF, proxy) ne decrit pas le site : il ne sert jamais de reference.
+  for (const file of candidates) {
+    const report = JSON.parse(await readFile(join(REPORTS_DIR, file), 'utf8'));
+    if (!report.blocked) return report;
+  }
+  return null;
+}
+
+/** Debut du texte d'une reponse, pour identifier qui bloque (proxy sortant, WAF du site...). */
+function responseSample(html) {
+  return toText(html).replace(/\s+/g, ' ').trim().slice(0, 300);
 }
 
 // ---------------------------------------------------------------------------
@@ -318,8 +328,9 @@ function headShapeOf(head) {
 async function auditPage(spec, sitemapSet) {
   const base = { slot: spec.slot, label: spec.label, kind: spec.kind, requestedUrl: spec.url };
   let report;
+  let res;
   try {
-    const res = await fetchPage(spec.url);
+    res = await fetchPage(spec.url);
     report = analyzeHtml(res.html, res.finalUrl, {
       requestedUrl: res.requestedUrl,
       finalUrl: res.finalUrl,
@@ -351,8 +362,11 @@ async function auditPage(spec, sitemapSet) {
   }
 
   const template = report.tools.find((t) => t.key === 'structured-data')?.extras?.template;
+  const blocked = issues.some((i) => i.id === 'http-blocked');
   return {
     ...base,
+    blocked,
+    responseSample: blocked || res.status >= 400 ? responseSample(res.html) : undefined,
     url: report.url,
     template: template?.key ?? null,
     mainType: template?.mainType ?? null,
@@ -477,6 +491,13 @@ function buildAlerts(report) {
 
 function printSummary(report) {
   const out = [];
+  if (report.blocked) {
+    out.push(`AUDIT BLOQUE ${report.date} : ${report.blocked.reason}`);
+    for (const s of report.blocked.statuses) out.push(`  ${s.slot} : ${s.status ?? s.error}`);
+    out.push(`Extrait de la reponse : ${report.blocked.sample}`);
+    console.log(out.join('\n'));
+    return;
+  }
   out.push(`Audit ${report.date} - score global ${report.score}/100${report.diff ? ` (veille ${report.diff.scoreBefore})` : ' (pas d\'historique)'}`);
   if (report.site.sitemap) {
     const s = report.site.sitemap;
@@ -548,8 +569,21 @@ async function main() {
     site,
     pages,
   };
-  report.diff = buildDiff(report, previous);
-  report.alerts = buildAlerts(report);
+  // Si aucune page n'a pu etre lue normalement, l'audit ne dit rien du site : on le marque
+  // comme bloque plutot que de produire des dizaines de faux defauts et une fausse tendance.
+  if (pages.length && pages.every((p) => p.blocked || p.error)) {
+    const sample = pages.find((p) => p.responseSample)?.responseSample ?? pages.find((p) => p.error)?.error ?? null;
+    report.blocked = {
+      reason: "Aucune page du site n'a pu etre lue : reponses de blocage ou erreurs reseau.",
+      statuses: pages.map((p) => ({ slot: p.slot, url: p.url, status: p.fetch?.status ?? null, error: p.error ?? null })),
+      sample,
+    };
+    report.diff = null;
+    report.alerts = [{ scope: 'site', id: 'audit-blocked', title: 'Audit non realise : acces au site bloque', value: sample }];
+  } else {
+    report.diff = buildDiff(report, previous);
+    report.alerts = buildAlerts(report);
+  }
 
   await mkdir(REPORTS_DIR, { recursive: true });
   const file = join(REPORTS_DIR, `${date}.json`);

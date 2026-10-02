@@ -258,6 +258,22 @@ function buildCsv(report) {
   return `﻿${lines.join('\r\n')}\r\n`;
 }
 
+/** Mail court quand l'audit n'a pas pu lire le site : aucun score ni constat, ils seraient faux. */
+function blockedHtml(report) {
+  const rows = report.blocked.statuses
+    .map((s) => `<li>${esc(SLOT_LABELS[s.slot] ?? s.slot)} : ${esc(s.status != null ? `HTTP ${s.status}` : s.error)}</li>`)
+    .join('');
+  return `<div style="max-width:760px;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.45;color:#222">
+    <h2 style="color:${COLORS.warning};margin:0 0 10px">Audit du ${esc(report.date)} non realise : acces au site bloque</h2>
+    <p>${esc(report.blocked.reason)} Aucun score ni constat n'est publie pour cette date : ils decriraient la page de blocage, pas le site.
+    Ce rapport ne servira pas de reference pour la prochaine comparaison.</p>
+    <ul>${rows}</ul>
+    <p style="margin:12px 0 4px"><strong>Extrait de la reponse recue</strong> (permet de savoir qui bloque) :</p>
+    <pre style="white-space:pre-wrap;background:#f5f5f5;padding:10px;font-size:12px">${esc(report.blocked.sample ?? '(vide)')}</pre>
+    <p style="color:${COLORS.muted};font-size:12px">A verifier : l'acces reseau de l'environnement de la routine (domaine www.kaufmanbroad.fr autorise),
+    puis, si le blocage persiste, les regles WAF / anti-robots du site pour les adresses IP de l'audit.</p></div>`;
+}
+
 function subjectOf(report) {
   const d = report.diff ? report.diff.scoreAfter - report.diff.scoreBefore : null;
   const trend = d == null ? '' : ` (${d > 0 ? '+' : ''}${d})`;
@@ -298,8 +314,13 @@ async function main() {
   } else {
     const report = JSON.parse(await readFile(join(REPORTS_DIR, `${date}.json`), 'utf8'));
     const synthese = await readOptional(join(REPORTS_DIR, `${date}.synthese.md`));
-    subject = subjectOf(report);
-    html = buildHtml(report, synthese, { reportsUrl: config.reportsUrl });
+    if (report.blocked) {
+      subject = `AUDIT NON REALISE (acces bloque) - kaufmanbroad.fr ${date}`;
+      html = blockedHtml(report);
+    } else {
+      subject = subjectOf(report);
+      html = buildHtml(report, synthese, { reportsUrl: config.reportsUrl });
+    }
     await writeFile(join(REPORTS_DIR, `${date}.csv`), buildCsv(report));
   }
 
