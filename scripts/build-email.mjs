@@ -235,6 +235,7 @@ function buildHtml(report, synthese, options = {}) {
   parts.push(
     `<p style="margin:28px 0 0;color:${COLORS.muted};font-size:12px">${detailLinks(report, options)}
      Rapport genere le ${esc(report.generatedAt)} en ${(report.elapsedMs / 1000).toFixed(0)} s.</p>`,
+    routineFooter(options.routineUrl),
   );
 
   return `<!doctype html><html><body style="margin:0;padding:0;background:#f4f4f4">
@@ -258,8 +259,15 @@ function buildCsv(report) {
   return `﻿${lines.join('\r\n')}\r\n`;
 }
 
+/** Lien vers la page de gestion de la routine (horaires, prompt, connecteurs), en pied de chaque mail. */
+function routineFooter(routineUrl) {
+  if (!routineUrl) return '';
+  return `<p style="margin:8px 0 0;color:${COLORS.muted};font-size:12px">Modifier la routine (jours, heure, prompt, connecteurs) :
+    <a href="${esc(routineUrl)}" style="color:${COLORS.info}">${esc(routineUrl)}</a></p>`;
+}
+
 /** Mail court quand l'audit n'a pas pu lire le site : aucun score ni constat, ils seraient faux. */
-function blockedHtml(report) {
+function blockedHtml(report, routineUrl) {
   const rows = report.blocked.statuses
     .map((s) => `<li>${esc(SLOT_LABELS[s.slot] ?? s.slot)} : ${esc(s.status != null ? `HTTP ${s.status}` : s.error)}</li>`)
     .join('');
@@ -271,7 +279,8 @@ function blockedHtml(report) {
     <p style="margin:12px 0 4px"><strong>Extrait de la reponse recue</strong> (permet de savoir qui bloque) :</p>
     <pre style="white-space:pre-wrap;background:#f5f5f5;padding:10px;font-size:12px">${esc(report.blocked.sample ?? '(vide)')}</pre>
     <p style="color:${COLORS.muted};font-size:12px">A verifier : l'acces reseau de l'environnement de la routine (domaine www.kaufmanbroad.fr autorise),
-    puis, si le blocage persiste, les regles WAF / anti-robots du site pour les adresses IP de l'audit.</p></div>`;
+    puis, si le blocage persiste, les regles WAF / anti-robots du site pour les adresses IP de l'audit.</p>
+    ${routineFooter(routineUrl)}</div>`;
 }
 
 function subjectOf(report) {
@@ -310,16 +319,17 @@ async function main() {
     html = `<div style="font-family:Arial,sans-serif;font-size:14px">
       <h2 style="color:${COLORS.error}">L'audit du ${esc(date)} n'a pas pu aboutir</h2>
       <pre style="white-space:pre-wrap;background:#f5f5f5;padding:12px">${esc(failure)}</pre>
-      <p>Aucun rapport n'a ete produit : l'absence de mail de synthese n'est pas un signe que tout va bien.</p></div>`;
+      <p>Aucun rapport n'a ete produit : l'absence de mail de synthese n'est pas un signe que tout va bien.</p>
+      ${routineFooter(config.routineUrl)}</div>`;
   } else {
     const report = JSON.parse(await readFile(join(REPORTS_DIR, `${date}.json`), 'utf8'));
     const synthese = await readOptional(join(REPORTS_DIR, `${date}.synthese.md`));
     if (report.blocked) {
       subject = `AUDIT NON REALISE (acces bloque) - kaufmanbroad.fr ${date}`;
-      html = blockedHtml(report);
+      html = blockedHtml(report, config.routineUrl);
     } else {
       subject = subjectOf(report);
-      html = buildHtml(report, synthese, { reportsUrl: config.reportsUrl });
+      html = buildHtml(report, synthese, { reportsUrl: config.reportsUrl, routineUrl: config.routineUrl });
     }
     await writeFile(join(REPORTS_DIR, `${date}.csv`), buildCsv(report));
   }

@@ -43,5 +43,6 @@
       }
     ]
   },
-  "reportsUrl": "https://github.com/jcpoirot/kb-audit-site/blob/main/reports/"
+  "reportsUrl": "https://github.com/jcpoirot/kb-audit-site/blob/main/reports/",
+  "routineUrl": "https://claude.ai/code/routines/trig_01DCJ78uHiEg4zGB6i2KAxs9"
 }
