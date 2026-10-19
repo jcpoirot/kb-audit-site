@@ -1,0 +1,1955 @@
+{
+  "date": "2026-10-19",
+  "generatedAt": "2026-10-19T05:07:54.354Z",
+  "elapsedMs": 16270,
+  "config": {
+    "site": "https://www.kaufmanbroad.fr",
+    "sitemap": "https://www.kaufmanbroad.fr/sitemap.xml"
+  },
+  "score": 77,
+  "site": {
+    "issues": [],
+    "score": 100,
+    "sitemap": {
+      "total": 2538,
+      "programmes": 171,
+      "lots": 1785,
+      "duplicates": 0,
+      "sampleChecked": [
+        {
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-d-oise/ermont/lot/Appartement/29731_54",
+          "status": 200,
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-d-oise/ermont/lot/Appartement/29731_54",
+          "elapsedMs": 987
+        },
+        {
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/grand-est/haut-rhin/village-neuf/lot/Appartement/72901_24",
+          "status": 200,
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/grand-est/haut-rhin/village-neuf/lot/Appartement/72901_24",
+          "elapsedMs": 881
+        },
+        {
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/provence-alpes-cote-d-azur/alpes-maritimes/saint-laurent-du-var/lot/Appartement/72011_12",
+          "status": 200,
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/provence-alpes-cote-d-azur/alpes-maritimes/saint-laurent-du-var/lot/Appartement/72011_12",
+          "elapsedMs": 913
+        },
+        {
+          "url": "https://www.kaufmanbroad.fr/guide-devenir-proprietaire-brs-lille",
+          "status": 200,
+          "finalUrl": "https://www.kaufmanbroad.fr/guide-devenir-proprietaire-brs-lille",
+          "elapsedMs": 862
+        },
+        {
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/pays-de-la-loire/maine-et-loire/angers/lot/Appartement/72451_100",
+          "status": 200,
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/pays-de-la-loire/maine-et-loire/angers/lot/Appartement/72451_100",
+          "elapsedMs": 917
+        },
+        {
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/juvisy-sur-orge/lot/Appartement/29431_67",
+          "status": 200,
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/juvisy-sur-orge/lot/Appartement/29431_67",
+          "elapsedMs": 920
+        },
+        {
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/provence-alpes-cote-d-azur/alpes-maritimes/saint-laurent-du-var/lot/Appartement/72781_70",
+          "status": 200,
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/provence-alpes-cote-d-azur/alpes-maritimes/saint-laurent-du-var/lot/Appartement/72781_70",
+          "elapsedMs": 895
+        },
+        {
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/provence-alpes-cote-d-azur/alpes-maritimes/antibes/lot/Maison/72651_6",
+          "status": 200,
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/provence-alpes-cote-d-azur/alpes-maritimes/antibes/lot/Maison/72651_6",
+          "elapsedMs": 941
+        },
+        {
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/provence-alpes-cote-d-azur/vaucluse/entraigues-sur-la-sorgue/lot/Appartement/35511_13",
+          "status": 200,
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/provence-alpes-cote-d-azur/vaucluse/entraigues-sur-la-sorgue/lot/Appartement/35511_13",
+          "elapsedMs": 948
+        },
+        {
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/yvelines/ecquevilly/lot/Appartement/81291_15",
+          "status": 200,
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/yvelines/ecquevilly/lot/Appartement/81291_15",
+          "elapsedMs": 1030
+        }
+      ]
+    }
+  },
+  "pages": [
+    {
+      "slot": "home",
+      "label": "Page d'accueil",
+      "kind": "fixe",
+      "requestedUrl": "https://www.kaufmanbroad.fr/",
+      "blocked": false,
+      "url": "https://www.kaufmanbroad.fr/",
+      "template": "home",
+      "mainType": null,
+      "fetch": {
+        "requestedUrl": "https://www.kaufmanbroad.fr/",
+        "finalUrl": "https://www.kaufmanbroad.fr/",
+        "status": 200,
+        "redirected": false,
+        "contentType": "text/html; charset=utf-8",
+        "xRobotsTag": null,
+        "elapsedMs": 996,
+        "bytes": 233219
+      },
+      "score": 81,
+      "counts": {
+        "error": 2,
+        "warning": 6,
+        "info": 6,
+        "success": 0
+      },
+      "tools": [
+        {
+          "key": "structured-data",
+          "label": "Donnees structurees",
+          "score": 79,
+          "counts": {
+            "error": 2,
+            "warning": 0,
+            "info": 1,
+            "success": 0
+          }
+        },
+        {
+          "key": "head-meta",
+          "label": "Head & meta",
+          "score": 71,
+          "counts": {
+            "error": 0,
+            "warning": 6,
+            "info": 5,
+            "success": 0
+          }
+        },
+        {
+          "key": "http-indexing",
+          "label": "HTTP & indexation",
+          "score": 100,
+          "counts": {
+            "error": 0,
+            "warning": 0,
+            "info": 0,
+            "success": 0
+          }
+        }
+      ],
+      "issues": [
+        {
+          "severity": "error",
+          "id": "jsonld-absent",
+          "category": "Syntaxe JSON-LD",
+          "title": "Aucun bloc JSON-LD sur la page",
+          "detail": "La page ne contient aucun <script type=\"application/ld+json\">. Sans donnees structurees, aucun resultat enrichi n'est possible.",
+          "path": null,
+          "fix": "Ajouter un bloc JSON-LD decrivant l'entite principale de la page.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "error",
+          "id": "kb-main-entity-missing",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "Page d'accueil sans entite Organization (ou RealEstateAgent)",
+          "detail": "Types racines detectes : aucun type racine.",
+          "path": null,
+          "fix": "Declarer l'entite principale avec un type approprie (Organization (ou RealEstateAgent)).",
+          "docs": "https://schema.org/Accommodation",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-title-length",
+          "category": "Head & meta",
+          "title": "Longueur du title : 66 caracteres",
+          "detail": "Cible 30-65 caracteres. Au-dela, Google tronque l'affichage.",
+          "path": null,
+          "fix": "Ajuster la longueur du title.",
+          "docs": null,
+          "value": "Promoteur Immobilier Neuf - Maison - Appartement | Kaufman & Broad",
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-title",
+          "category": "Head & meta",
+          "title": "og:title absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:title\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-description",
+          "category": "Head & meta",
+          "title": "og:description absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:description\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-url",
+          "category": "Head & meta",
+          "title": "og:url absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:url\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-type",
+          "category": "Head & meta",
+          "title": "og:type absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:type\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-og-image-missing",
+          "category": "Head & meta",
+          "title": "og:image absent",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter une image de partage de 1200x630 px.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "kb-no-organization",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "Aucune entite Organization sur la page",
+          "detail": "Declarer Kaufman & Broad (RealEstateAgent ou Organization) avec logo et sameAs consolide l'entite de marque aupres de Google.",
+          "path": null,
+          "fix": "Ajouter un bloc Organization racine, ou le referencer via @id depuis les autres entites.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/organization",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "meta-description-length",
+          "category": "Head & meta",
+          "title": "Longueur de la meta description : 163 caracteres",
+          "detail": "Cible 70-160 caracteres.",
+          "path": null,
+          "fix": "Ajuster la longueur de la description.",
+          "docs": null,
+          "value": "Kaufman & Broad est promoteur immobilier en France depuis près de 60 ans. Achetez une maison neuve ou un appartement neuf dans un des programmes immobiliers neufs.",
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "meta-og-sitename",
+          "category": "Head & meta",
+          "title": "og:site_name absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:site_name\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "meta-og-locale",
+          "category": "Head & meta",
+          "title": "og:locale absent",
+          "detail": "Utilise pour les partages sociaux et par certains agregateurs immobiliers.",
+          "path": null,
+          "fix": "Ajouter <meta property=\"og:locale\" content=\"…\">.",
+          "docs": "https://ogp.me/",
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "meta-twitter-card",
+          "category": "Head & meta",
+          "title": "twitter:card absent",
+          "detail": null,
+          "path": null,
+          "fix": "Ajouter <meta name=\"twitter:card\" content=\"summary_large_image\">.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "meta-img-alt",
+          "category": "Head & meta",
+          "title": "7 image(s) sur 12 sans attribut alt",
+          "detail": "Le texte alternatif alimente Google Images et l'accessibilite.",
+          "path": null,
+          "fix": "Renseigner alt sur les visuels porteurs de sens.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        }
+      ],
+      "structure": [],
+      "headShape": [
+        "canonical",
+        "description",
+        "lang",
+        "robots",
+        "robots=index,follow",
+        "title",
+        "viewport"
+      ]
+    },
+    {
+      "slot": "programme-temoin",
+      "label": "Programme temoin (Orly)",
+      "kind": "fixe",
+      "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/programme/28071",
+      "blocked": false,
+      "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/programme/28071",
+      "template": "programme",
+      "mainType": null,
+      "fetch": {
+        "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/programme/28071",
+        "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/programme/28071",
+        "status": 200,
+        "redirected": false,
+        "contentType": "text/html; charset=utf-8",
+        "xRobotsTag": null,
+        "elapsedMs": 952,
+        "bytes": 267271
+      },
+      "score": 58,
+      "counts": {
+        "error": 3,
+        "warning": 9,
+        "info": 10,
+        "success": 0
+      },
+      "tools": [
+        {
+          "key": "structured-data",
+          "label": "Donnees structurees",
+          "score": 30,
+          "counts": {
+            "error": 3,
+            "warning": 8,
+            "info": 8,
+            "success": 0
+          }
+        },
+        {
+          "key": "head-meta",
+          "label": "Head & meta",
+          "score": 94,
+          "counts": {
+            "error": 0,
+            "warning": 1,
+            "info": 2,
+            "success": 0
+          }
+        },
+        {
+          "key": "http-indexing",
+          "label": "HTTP & indexation",
+          "score": 100,
+          "counts": {
+            "error": 0,
+            "warning": 0,
+            "info": 0,
+            "success": 0
+          }
+        }
+      ],
+      "issues": [
+        {
+          "severity": "error",
+          "id": "kb-main-entity-missing",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "Page programme sans entite ApartmentComplex, ou un autre sous-type de Residence",
+          "detail": "Types racines detectes : HousingComplex, Product, BreadcrumbList.",
+          "path": null,
+          "fix": "Declarer l'entite principale avec un type approprie (ApartmentComplex, ou un autre sous-type de Residence).",
+          "docs": "https://schema.org/Accommodation",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "error",
+          "id": "schema-unknown-type",
+          "category": "Vocabulaire schema.org",
+          "title": "Type inconnu : HousingComplex",
+          "detail": "Ce type n'existe pas dans le vocabulaire schema.org publie : le noeud est ignore par les moteurs. Verifier qu'il ne provient pas d'une extension « pending » non validee.",
+          "path": "bloc 1",
+          "fix": "Remplacer par un type existant : ApartmentComplex, TennisComplex.",
+          "docs": "https://schema.org/docs/full.html",
+          "value": "HousingComplex",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "error",
+          "id": "schema-unknown-property",
+          "category": "Vocabulaire schema.org",
+          "title": "Propriete inconnue : developer",
+          "detail": "Cette propriete n'existe pas dans schema.org : elle est ignoree par les moteurs.",
+          "path": "bloc 1 > developer",
+          "fix": "Supprimer la propriete ou utiliser un terme du vocabulaire.",
+          "docs": "https://schema.org/docs/full.html",
+          "value": "{\"@type\":\"Organization\",\"@id\":\"https://www.kaufmanbroad.fr/#organization\",\"name\":\"Kaufman & Broad\",\"url\":\"https://www.ka",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-title-length",
+          "category": "Head & meta",
+          "title": "Longueur du title : 68 caracteres",
+          "detail": "Cible 30-65 caracteres. Au-dela, Google tronque l'affichage.",
+          "path": null,
+          "fix": "Ajuster la longueur du title.",
+          "docs": null,
+          "value": "Programme immobilier neuf villas du vercors à orly | Kaufman & Broad",
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "google-product-no-identifier",
+          "category": "Resultats enrichis Google",
+          "title": "Product sans identifiant (sku, gtin, mpn)",
+          "detail": "Un identifiant stable permet a Google de rapprocher le produit entre les sources.",
+          "path": "bloc 1",
+          "fix": "Ajouter sku (ou productID) avec la reference du lot.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/product",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "schema-property-out-of-domain",
+          "category": "Vocabulaire schema.org",
+          "title": "address n'est pas une propriete de Product",
+          "detail": "schema.org declare address sur : GeoCoordinates, GeoShape, Organization, Person…. Hors domaine, la propriete est ignoree (et signalee par le Rich Results Test).",
+          "path": "bloc 1 > address",
+          "fix": "Ajouter un type compatible au noeud (ex. \"@type\": [\"Product\", \"GeoCoordinates\"]) ou deplacer la propriete.",
+          "docs": "https://schema.org/address",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "schema-property-out-of-domain",
+          "category": "Vocabulaire schema.org",
+          "title": "amenityFeature n'est pas une propriete de Product",
+          "detail": "schema.org declare amenityFeature sur : Accommodation, FloorPlan, LodgingBusiness, Place. Hors domaine, la propriete est ignoree (et signalee par le Rich Results Test).",
+          "path": "bloc 1 > amenityFeature",
+          "fix": "Ajouter un type compatible au noeud (ex. \"@type\": [\"Product\", \"Accommodation\"]) ou deplacer la propriete.",
+          "docs": "https://schema.org/amenityFeature",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "jsonld-html-in-value",
+          "category": "Syntaxe JSON-LD",
+          "title": "HTML ou entite HTML dans description",
+          "detail": "Les valeurs JSON-LD doivent etre du texte brut. Les balises et entites sont affichees telles quelles dans les resultats enrichis.",
+          "path": "bloc 1 > description",
+          "fix": "Decoder les entites et retirer les balises avant la serialisation JSON.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/sd-policies",
+          "value": "À moins de 30 min* de Paris, découvrez un nouvel écoquartier, en lisière du cœur historique d’Orly-la-Ville et de son célèbre Parc Méliès.Ce…",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "schema-property-out-of-domain",
+          "category": "Vocabulaire schema.org",
+          "title": "geo n'est pas une propriete de Product",
+          "detail": "schema.org declare geo sur : Place. Hors domaine, la propriete est ignoree (et signalee par le Rich Results Test).",
+          "path": "bloc 1 > geo",
+          "fix": "Ajouter un type compatible au noeud (ex. \"@type\": [\"Product\", \"Place\"]) ou deplacer la propriete.",
+          "docs": "https://schema.org/geo",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "schema-property-out-of-domain",
+          "category": "Vocabulaire schema.org",
+          "title": "numberOfAccommodationUnits n'est pas une propriete de Product",
+          "detail": "schema.org declare numberOfAccommodationUnits sur : ApartmentComplex, FloorPlan. Hors domaine, la propriete est ignoree (et signalee par le Rich Results Test).",
+          "path": "bloc 1 > numberOfAccommodationUnits",
+          "fix": "Ajouter un type compatible au noeud (ex. \"@type\": [\"Product\", \"ApartmentComplex\"]) ou deplacer la propriete.",
+          "docs": "https://schema.org/numberOfAccommodationUnits",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "schema-range-mismatch",
+          "category": "Vocabulaire schema.org",
+          "title": "Type de valeur inattendu pour numberOfAccommodationUnits",
+          "detail": "schema.org attend QuantitativeValue, la valeur fournie est un nombre.",
+          "path": "bloc 1 > numberOfAccommodationUnits",
+          "fix": "Fournir une valeur de type QuantitativeValue.",
+          "docs": "https://schema.org/numberOfAccommodationUnits",
+          "value": "61",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "coherence-price-hidden",
+          "category": "Coherence page / balisage",
+          "title": "highPrice (364000) introuvable dans le texte visible",
+          "detail": "Google exige que les donnees structurees decrivent un contenu visible par l'internaute. Un prix balise mais absent de la page est un motif d'action manuelle.",
+          "path": "bloc 1 > offers > highPrice",
+          "fix": "Afficher le prix sur la page, ou retirer la propriete du balisage.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/sd-policies",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "meta-description-length",
+          "category": "Head & meta",
+          "title": "Longueur de la meta description : 65 caracteres",
+          "detail": "Cible 70-160 caracteres.",
+          "path": null,
+          "fix": "Ajuster la longueur de la description.",
+          "docs": null,
+          "value": "Un écoquartier paisible et connecté répondant à toutes les envies",
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "meta-img-alt",
+          "category": "Head & meta",
+          "title": "5 image(s) sur 9 sans attribut alt",
+          "detail": "Le texte alternatif alimente Google Images et l'accessibilite.",
+          "path": null,
+          "fix": "Renseigner alt sur les visuels porteurs de sens.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "google-product-recommended-aggregaterating",
+          "category": "Resultats enrichis Google",
+          "title": "Product : aggregateRating recommande",
+          "detail": "Note moyenne : declenche les etoiles dans le SERP.",
+          "path": "bloc 1",
+          "fix": "Ajouter aggregateRating.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/product",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "google-product-recommended-review",
+          "category": "Resultats enrichis Google",
+          "title": "Product : review recommande",
+          "detail": "Avis clients.",
+          "path": "bloc 1",
+          "fix": "Ajouter review.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/product",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "jsonld-whitespace",
+          "category": "Syntaxe JSON-LD",
+          "title": "Espaces superflus dans streetAddress",
+          "detail": "Espace en debut ou fin de valeur.",
+          "path": "bloc 1 > address.streetAddress",
+          "fix": "Appliquer un trim a la source.",
+          "docs": null,
+          "value": "\"102 avenue de la victoire\"",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "coherence-description-meta",
+          "category": "Coherence page / balisage",
+          "title": "description structuree differente de la meta description",
+          "detail": "Ce n'est pas une erreur, mais deux descriptions divergentes signalent souvent deux sources de donnees non synchronisees.",
+          "path": "bloc 1 > description",
+          "fix": "Verifier que les deux proviennent du meme champ metier.",
+          "docs": null,
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "geo-precision-latitude",
+          "category": "Qualite des donnees",
+          "title": "Precision excessive sur latitude",
+          "detail": "12 decimales, soit une precision sub-millimetrique sans interet. 6 decimales suffisent (~10 cm).",
+          "path": "bloc 1 > geo > latitude",
+          "fix": "Arrondir a 6 decimales.",
+          "docs": null,
+          "value": "48.746065936393",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "geo-precision-longitude",
+          "category": "Qualite des donnees",
+          "title": "Precision excessive sur longitude",
+          "detail": "12 decimales, soit une precision sub-millimetrique sans interet. 6 decimales suffisent (~10 cm).",
+          "path": "bloc 1 > geo > longitude",
+          "fix": "Arrondir a 6 decimales.",
+          "docs": null,
+          "value": "2.385876119412",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "coherence-image-og",
+          "category": "Coherence page / balisage",
+          "title": "Image structuree differente de og:image",
+          "detail": "JSON-LD : https://medias.kaufmanbroad.fr/dpalai148/image/upload/c_fill,w_1600,h_900,f_jpg/pim/perspectives/media/28071_programmeimmobilierneufprochainementorly1.jpg — og:image : https://medias.kaufmanbroad.fr/dpalai148/image/upload/w_1200,h_630/pim/perspectives/media/28071_programmeimmobilierneufprochainementorly1.jpg.",
+          "path": "bloc 1 > image",
+          "fix": "Aligner les deux sur le meme visuel principal.",
+          "docs": null,
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "google-offer-url",
+          "category": "Resultats enrichis Google",
+          "title": "Offre sans url",
+          "detail": "L'URL de l'offre leve toute ambiguite sur la page de destination.",
+          "path": "bloc 1 > offers",
+          "fix": "Ajouter url avec l'URL canonique de la page.",
+          "docs": "https://schema.org/Offer",
+          "value": null,
+          "tool": "structured-data"
+        }
+      ],
+      "structure": [
+        "<BreadcrumbList>itemListElement[]<ListItem>.item",
+        "<BreadcrumbList>itemListElement[]<ListItem>.name",
+        "<BreadcrumbList>itemListElement[]<ListItem>.position",
+        "<HousingComplex+Product>@id",
+        "<HousingComplex+Product>additionalProperty<PropertyValue>.name",
+        "<HousingComplex+Product>additionalProperty<PropertyValue>.value",
+        "<HousingComplex+Product>address<PostalAddress>.addressCountry",
+        "<HousingComplex+Product>address<PostalAddress>.addressLocality",
+        "<HousingComplex+Product>address<PostalAddress>.addressRegion",
+        "<HousingComplex+Product>address<PostalAddress>.postalCode",
+        "<HousingComplex+Product>address<PostalAddress>.streetAddress",
+        "<HousingComplex+Product>amenityFeature[]<LocationFeatureSpecification>.name",
+        "<HousingComplex+Product>description",
+        "<HousingComplex+Product>developer<Organization>.@id",
+        "<HousingComplex+Product>developer<Organization>.contactPoint<ContactPoint>.contactType",
+        "<HousingComplex+Product>developer<Organization>.contactPoint<ContactPoint>.telephone",
+        "<HousingComplex+Product>developer<Organization>.name",
+        "<HousingComplex+Product>developer<Organization>.url",
+        "<HousingComplex+Product>geo<GeoCoordinates>.latitude",
+        "<HousingComplex+Product>geo<GeoCoordinates>.longitude",
+        "<HousingComplex+Product>image[]<ImageObject>.@id",
+        "<HousingComplex+Product>image[]<ImageObject>.caption",
+        "<HousingComplex+Product>image[]<ImageObject>.contentUrl",
+        "<HousingComplex+Product>image[]<ImageObject>.copyrightNotice",
+        "<HousingComplex+Product>image[]<ImageObject>.creator.@id",
+        "<HousingComplex+Product>image[]<ImageObject>.creditText",
+        "<HousingComplex+Product>image[]<ImageObject>.encodingFormat",
+        "<HousingComplex+Product>image[]<ImageObject>.height<QuantitativeValue>.value",
+        "<HousingComplex+Product>image[]<ImageObject>.representativeOfPage",
+        "<HousingComplex+Product>image[]<ImageObject>.url",
+        "<HousingComplex+Product>image[]<ImageObject>.width<QuantitativeValue>.value",
+        "<HousingComplex+Product>name",
+        "<HousingComplex+Product>numberOfAccommodationUnits",
+        "<HousingComplex+Product>offers<AggregateOffer>.availability",
+        "<HousingComplex+Product>offers<AggregateOffer>.highPrice",
+        "<HousingComplex+Product>offers<AggregateOffer>.lowPrice",
+        "<HousingComplex+Product>offers<AggregateOffer>.offerCount",
+        "<HousingComplex+Product>offers<AggregateOffer>.priceCurrency",
+        "<HousingComplex+Product>url"
+      ],
+      "headShape": [
+        "canonical",
+        "description",
+        "lang",
+        "og.description",
+        "og.imageAlt",
+        "og.imageHeight",
+        "og.imageWidth",
+        "og.images",
+        "og.locale",
+        "og.siteName",
+        "og.title",
+        "og.type",
+        "og.url",
+        "robots",
+        "robots=index,follow",
+        "title",
+        "twitter.card",
+        "twitter.description",
+        "twitter.image",
+        "twitter.title",
+        "viewport"
+      ]
+    },
+    {
+      "slot": "lot-temoin",
+      "label": "Lot temoin (Orly)",
+      "kind": "fixe",
+      "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/lot/Appartement/28071_58",
+      "blocked": false,
+      "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/lot/Appartement/28071_58",
+      "template": "lot",
+      "mainType": "Apartment + Product",
+      "fetch": {
+        "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/lot/Appartement/28071_58",
+        "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-de-marne/orly/lot/Appartement/28071_58",
+        "status": 200,
+        "redirected": false,
+        "contentType": "text/html; charset=utf-8",
+        "xRobotsTag": null,
+        "elapsedMs": 968,
+        "bytes": 180827
+      },
+      "score": 82,
+      "counts": {
+        "error": 1,
+        "warning": 2,
+        "info": 14,
+        "success": 0
+      },
+      "tools": [
+        {
+          "key": "structured-data",
+          "label": "Donnees structurees",
+          "score": 69,
+          "counts": {
+            "error": 1,
+            "warning": 2,
+            "info": 13,
+            "success": 0
+          }
+        },
+        {
+          "key": "head-meta",
+          "label": "Head & meta",
+          "score": 99,
+          "counts": {
+            "error": 0,
+            "warning": 0,
+            "info": 1,
+            "success": 0
+          }
+        },
+        {
+          "key": "http-indexing",
+          "label": "HTTP & indexation",
+          "score": 100,
+          "counts": {
+            "error": 0,
+            "warning": 0,
+            "info": 0,
+            "success": 0
+          }
+        }
+      ],
+      "issues": [
+        {
+          "severity": "error",
+          "id": "schema-unknown-type",
+          "category": "Vocabulaire schema.org",
+          "title": "Type inconnu : HousingComplex",
+          "detail": "Ce type n'existe pas dans le vocabulaire schema.org publie : le noeud est ignore par les moteurs. Verifier qu'il ne provient pas d'une extension « pending » non validee.",
+          "path": "bloc 1 > isPartOf",
+          "fix": "Remplacer par un type existant : ApartmentComplex, TennisComplex.",
+          "docs": "https://schema.org/docs/full.html",
+          "value": "HousingComplex",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "jsonld-html-in-value",
+          "category": "Syntaxe JSON-LD",
+          "title": "HTML ou entite HTML dans description",
+          "detail": "Les valeurs JSON-LD doivent etre du texte brut. Les balises et entites sont affichees telles quelles dans les resultats enrichis.",
+          "path": "bloc 1 > description",
+          "fix": "Decoder les entites et retirer les balises avant la serialisation JSON.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/sd-policies",
+          "value": "Appartement 4 pièces de 80,99 m² à Orly, au sein de Villas du Vercors, un programme Kaufman & Broad, situé au 1er étage. Il comprend un séjo…",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "schema-property-out-of-domain",
+          "category": "Vocabulaire schema.org",
+          "title": "isPartOf n'est pas une propriete de Apartment + Product",
+          "detail": "schema.org declare isPartOf sur : CreativeWork. Hors domaine, la propriete est ignoree (et signalee par le Rich Results Test).",
+          "path": "bloc 1 > isPartOf",
+          "fix": "Ajouter un type compatible au noeud (ex. \"@type\": [\"Apartment\", \"CreativeWork\"]) ou deplacer la propriete.",
+          "docs": "https://schema.org/isPartOf",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "meta-img-alt",
+          "category": "Head & meta",
+          "title": "5 image(s) sur 10 sans attribut alt",
+          "detail": "Le texte alternatif alimente Google Images et l'accessibilite.",
+          "path": null,
+          "fix": "Renseigner alt sur les visuels porteurs de sens.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "google-product-recommended-aggregaterating",
+          "category": "Resultats enrichis Google",
+          "title": "Product : aggregateRating recommande",
+          "detail": "Note moyenne : declenche les etoiles dans le SERP.",
+          "path": "bloc 1",
+          "fix": "Ajouter aggregateRating.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/product",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "google-product-recommended-review",
+          "category": "Resultats enrichis Google",
+          "title": "Product : review recommande",
+          "detail": "Avis clients.",
+          "path": "bloc 1",
+          "fix": "Ajouter review.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/product",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "kb-recommended-numberofbathroomstotal",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "numberOfBathroomsTotal absent sur Apartment + Product",
+          "detail": "Nombre de salles de bain / salles d'eau.",
+          "path": "bloc 1",
+          "fix": "Ajouter numberOfBathroomsTotal.",
+          "docs": "https://schema.org/numberOfBathroomsTotal",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "kb-recommended-floorlevel",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "floorLevel absent sur Apartment + Product",
+          "detail": "Etage du lot.",
+          "path": "bloc 1",
+          "fix": "Ajouter floorLevel.",
+          "docs": "https://schema.org/floorLevel",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "kb-recommended-yearbuilt",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "yearBuilt absent sur Apartment + Product",
+          "detail": "Annee de livraison prevue.",
+          "path": "bloc 1",
+          "fix": "Ajouter yearBuilt.",
+          "docs": "https://schema.org/yearBuilt",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "kb-recommended-tourbookingpage",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "tourBookingPage absent sur Apartment + Product",
+          "detail": "Page de prise de rendez-vous, si elle existe.",
+          "path": "bloc 1",
+          "fix": "Ajouter tourBookingPage.",
+          "docs": "https://schema.org/tourBookingPage",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "kb-dpe-missing",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "Performance energetique (DPE) non balisee",
+          "detail": "Le DPE / GES est affiche sur la page et obligatoire dans les annonces : le baliser via hasEnergyConsumptionDetails (EnergyConsumptionDetails) le rend exploitable par les moteurs et les agregateurs.",
+          "path": "bloc 1",
+          "fix": "Ajouter hasEnergyConsumptionDetails avec energyEfficiencyScaleMin / energyEfficiencyScaleMax.",
+          "docs": "https://schema.org/EnergyConsumptionDetails",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "jsonld-whitespace",
+          "category": "Syntaxe JSON-LD",
+          "title": "Espaces superflus dans streetAddress",
+          "detail": "Espace en debut ou fin de valeur.",
+          "path": "bloc 1 > address.streetAddress",
+          "fix": "Appliquer un trim a la source.",
+          "docs": null,
+          "value": "\"102 avenue de la victoire\"",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "coherence-description-meta",
+          "category": "Coherence page / balisage",
+          "title": "description structuree differente de la meta description",
+          "detail": "Ce n'est pas une erreur, mais deux descriptions divergentes signalent souvent deux sources de donnees non synchronisees.",
+          "path": "bloc 1 > description",
+          "fix": "Verifier que les deux proviennent du meme champ metier.",
+          "docs": null,
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "geo-precision-latitude",
+          "category": "Qualite des donnees",
+          "title": "Precision excessive sur latitude",
+          "detail": "12 decimales, soit une precision sub-millimetrique sans interet. 6 decimales suffisent (~10 cm).",
+          "path": "bloc 1 > geo > latitude",
+          "fix": "Arrondir a 6 decimales.",
+          "docs": null,
+          "value": "48.746065936393",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "geo-precision-longitude",
+          "category": "Qualite des donnees",
+          "title": "Precision excessive sur longitude",
+          "detail": "12 decimales, soit une precision sub-millimetrique sans interet. 6 decimales suffisent (~10 cm).",
+          "path": "bloc 1 > geo > longitude",
+          "fix": "Arrondir a 6 decimales.",
+          "docs": null,
+          "value": "2.385876119412",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "coherence-image-og",
+          "category": "Coherence page / balisage",
+          "title": "Image structuree differente de og:image",
+          "detail": "JSON-LD : https://medias.kaufmanbroad.fr/dpalai148/image/upload/c_fill,w_1600,h_900,f_jpg/pim/unitImages/media/28071_A102_iav1_chambre_1.jpg — og:image : https://medias.kaufmanbroad.fr/dpalai148/image/upload/w_1200,h_630/pim/unitImages/media/28071_A102_iav1_chambre_1.jpg.",
+          "path": "bloc 1 > image",
+          "fix": "Aligner les deux sur le meme visuel principal.",
+          "docs": null,
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "google-offer-pricevaliduntil",
+          "category": "Resultats enrichis Google",
+          "title": "Offer sans priceValidUntil",
+          "detail": "Google avertit sur ce champ : sans lui, le prix peut etre considere comme perime.",
+          "path": "bloc 1 > offers",
+          "fix": "Ajouter priceValidUntil au format AAAA-MM-JJ.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/product",
+          "value": null,
+          "tool": "structured-data"
+        }
+      ],
+      "structure": [
+        "<Apartment+Product>@id",
+        "<Apartment+Product>additionalProperty<PropertyValue>.name",
+        "<Apartment+Product>additionalProperty<PropertyValue>.value",
+        "<Apartment+Product>address<PostalAddress>.addressCountry",
+        "<Apartment+Product>address<PostalAddress>.addressLocality",
+        "<Apartment+Product>address<PostalAddress>.addressRegion",
+        "<Apartment+Product>address<PostalAddress>.postalCode",
+        "<Apartment+Product>address<PostalAddress>.streetAddress",
+        "<Apartment+Product>brand<Brand>.name",
+        "<Apartment+Product>category",
+        "<Apartment+Product>description",
+        "<Apartment+Product>floorSize<QuantitativeValue>.unitCode",
+        "<Apartment+Product>floorSize<QuantitativeValue>.value",
+        "<Apartment+Product>geo<GeoCoordinates>.latitude",
+        "<Apartment+Product>geo<GeoCoordinates>.longitude",
+        "<Apartment+Product>identifier",
+        "<Apartment+Product>image[]<ImageObject>.@id",
+        "<Apartment+Product>image[]<ImageObject>.caption",
+        "<Apartment+Product>image[]<ImageObject>.contentUrl",
+        "<Apartment+Product>image[]<ImageObject>.copyrightNotice",
+        "<Apartment+Product>image[]<ImageObject>.creator.@id",
+        "<Apartment+Product>image[]<ImageObject>.creditText",
+        "<Apartment+Product>image[]<ImageObject>.encodingFormat",
+        "<Apartment+Product>image[]<ImageObject>.height<QuantitativeValue>.value",
+        "<Apartment+Product>image[]<ImageObject>.representativeOfPage",
+        "<Apartment+Product>image[]<ImageObject>.url",
+        "<Apartment+Product>image[]<ImageObject>.width<QuantitativeValue>.value",
+        "<Apartment+Product>isPartOf<HousingComplex>.name",
+        "<Apartment+Product>isPartOf<HousingComplex>.url",
+        "<Apartment+Product>name",
+        "<Apartment+Product>numberOfBedrooms",
+        "<Apartment+Product>numberOfRooms",
+        "<Apartment+Product>offers<Offer>.availability",
+        "<Apartment+Product>offers<Offer>.itemCondition",
+        "<Apartment+Product>offers<Offer>.price",
+        "<Apartment+Product>offers<Offer>.priceCurrency",
+        "<Apartment+Product>offers<Offer>.seller<Organization>.@id",
+        "<Apartment+Product>offers<Offer>.seller<Organization>.contactPoint<ContactPoint>.contactType",
+        "<Apartment+Product>offers<Offer>.seller<Organization>.contactPoint<ContactPoint>.telephone",
+        "<Apartment+Product>offers<Offer>.seller<Organization>.name",
+        "<Apartment+Product>offers<Offer>.seller<Organization>.url",
+        "<Apartment+Product>offers<Offer>.url",
+        "<Apartment+Product>sku",
+        "<Apartment+Product>url",
+        "<BreadcrumbList>itemListElement[]<ListItem>.item",
+        "<BreadcrumbList>itemListElement[]<ListItem>.name",
+        "<BreadcrumbList>itemListElement[]<ListItem>.position"
+      ],
+      "headShape": [
+        "canonical",
+        "description",
+        "lang",
+        "og.description",
+        "og.imageAlt",
+        "og.imageHeight",
+        "og.imageWidth",
+        "og.images",
+        "og.locale",
+        "og.siteName",
+        "og.title",
+        "og.type",
+        "og.url",
+        "robots",
+        "robots=index,follow",
+        "title",
+        "twitter.card",
+        "twitter.description",
+        "twitter.image",
+        "twitter.title",
+        "viewport"
+      ]
+    },
+    {
+      "slot": "programme-aleatoire",
+      "label": "Programme tire au hasard",
+      "kind": "aleatoire",
+      "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/seine-et-marne/moussy-le-vieux/programme/22181",
+      "blocked": false,
+      "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/seine-et-marne/moussy-le-vieux/programme/22181",
+      "template": "programme",
+      "mainType": null,
+      "fetch": {
+        "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/seine-et-marne/moussy-le-vieux/programme/22181",
+        "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/seine-et-marne/moussy-le-vieux/programme/22181",
+        "status": 200,
+        "redirected": false,
+        "contentType": "text/html; charset=utf-8",
+        "xRobotsTag": null,
+        "elapsedMs": 1007,
+        "bytes": 319290
+      },
+      "score": 57,
+      "counts": {
+        "error": 3,
+        "warning": 9,
+        "info": 12,
+        "success": 0
+      },
+      "tools": [
+        {
+          "key": "structured-data",
+          "label": "Donnees structurees",
+          "score": 28,
+          "counts": {
+            "error": 3,
+            "warning": 8,
+            "info": 10,
+            "success": 0
+          }
+        },
+        {
+          "key": "head-meta",
+          "label": "Head & meta",
+          "score": 94,
+          "counts": {
+            "error": 0,
+            "warning": 1,
+            "info": 2,
+            "success": 0
+          }
+        },
+        {
+          "key": "http-indexing",
+          "label": "HTTP & indexation",
+          "score": 100,
+          "counts": {
+            "error": 0,
+            "warning": 0,
+            "info": 0,
+            "success": 0
+          }
+        }
+      ],
+      "issues": [
+        {
+          "severity": "error",
+          "id": "kb-main-entity-missing",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "Page programme sans entite ApartmentComplex, ou un autre sous-type de Residence",
+          "detail": "Types racines detectes : HousingComplex, Product, BreadcrumbList.",
+          "path": null,
+          "fix": "Declarer l'entite principale avec un type approprie (ApartmentComplex, ou un autre sous-type de Residence).",
+          "docs": "https://schema.org/Accommodation",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "error",
+          "id": "schema-unknown-type",
+          "category": "Vocabulaire schema.org",
+          "title": "Type inconnu : HousingComplex",
+          "detail": "Ce type n'existe pas dans le vocabulaire schema.org publie : le noeud est ignore par les moteurs. Verifier qu'il ne provient pas d'une extension « pending » non validee.",
+          "path": "bloc 1",
+          "fix": "Remplacer par un type existant : ApartmentComplex, TennisComplex.",
+          "docs": "https://schema.org/docs/full.html",
+          "value": "HousingComplex",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "error",
+          "id": "schema-unknown-property",
+          "category": "Vocabulaire schema.org",
+          "title": "Propriete inconnue : developer",
+          "detail": "Cette propriete n'existe pas dans schema.org : elle est ignoree par les moteurs.",
+          "path": "bloc 1 > developer",
+          "fix": "Supprimer la propriete ou utiliser un terme du vocabulaire.",
+          "docs": "https://schema.org/docs/full.html",
+          "value": "{\"@type\":\"Organization\",\"@id\":\"https://www.kaufmanbroad.fr/#organization\",\"name\":\"Kaufman & Broad\",\"url\":\"https://www.ka",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "meta-title-length",
+          "category": "Head & meta",
+          "title": "Longueur du title : 78 caracteres",
+          "detail": "Cible 30-65 caracteres. Au-dela, Google tronque l'affichage.",
+          "path": null,
+          "fix": "Ajuster la longueur du title.",
+          "docs": null,
+          "value": "Programme immobilier neuf l'orée du puits  à moussy-le-vieux | Kaufman & Broad",
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
+          "id": "google-product-no-identifier",
+          "category": "Resultats enrichis Google",
+          "title": "Product sans identifiant (sku, gtin, mpn)",
+          "detail": "Un identifiant stable permet a Google de rapprocher le produit entre les sources.",
+          "path": "bloc 1",
+          "fix": "Ajouter sku (ou productID) avec la reference du lot.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/product",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "schema-property-out-of-domain",
+          "category": "Vocabulaire schema.org",
+          "title": "address n'est pas une propriete de Product",
+          "detail": "schema.org declare address sur : GeoCoordinates, GeoShape, Organization, Person…. Hors domaine, la propriete est ignoree (et signalee par le Rich Results Test).",
+          "path": "bloc 1 > address",
+          "fix": "Ajouter un type compatible au noeud (ex. \"@type\": [\"Product\", \"GeoCoordinates\"]) ou deplacer la propriete.",
+          "docs": "https://schema.org/address",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "schema-property-out-of-domain",
+          "category": "Vocabulaire schema.org",
+          "title": "amenityFeature n'est pas une propriete de Product",
+          "detail": "schema.org declare amenityFeature sur : Accommodation, FloorPlan, LodgingBusiness, Place. Hors domaine, la propriete est ignoree (et signalee par le Rich Results Test).",
+          "path": "bloc 1 > amenityFeature",
+          "fix": "Ajouter un type compatible au noeud (ex. \"@type\": [\"Product\", \"Accommodation\"]) ou deplacer la propriete.",
+          "docs": "https://schema.org/amenityFeature",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "jsonld-html-in-value",
+          "category": "Syntaxe JSON-LD",
+          "title": "HTML ou entite HTML dans description",
+          "detail": "Les valeurs JSON-LD doivent etre du texte brut. Les balises et entites sont affichees telles quelles dans les resultats enrichis.",
+          "path": "bloc 1 > description",
+          "fix": "Decoder les entites et retirer les balises avant la serialisation JSON.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/sd-policies",
+          "value": "Découvrez à Moussy le Vieux, charmante commune de Seine-et-Marne, une résidence à taille humaine dans un cadre de vie bucolique. Grâce à son…",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "schema-property-out-of-domain",
+          "category": "Vocabulaire schema.org",
+          "title": "geo n'est pas une propriete de Product",
+          "detail": "schema.org declare geo sur : Place. Hors domaine, la propriete est ignoree (et signalee par le Rich Results Test).",
+          "path": "bloc 1 > geo",
+          "fix": "Ajouter un type compatible au noeud (ex. \"@type\": [\"Product\", \"Place\"]) ou deplacer la propriete.",
+          "docs": "https://schema.org/geo",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "schema-property-out-of-domain",
+          "category": "Vocabulaire schema.org",
+          "title": "numberOfAccommodationUnits n'est pas une propriete de Product",
+          "detail": "schema.org declare numberOfAccommodationUnits sur : ApartmentComplex, FloorPlan. Hors domaine, la propriete est ignoree (et signalee par le Rich Results Test).",
+          "path": "bloc 1 > numberOfAccommodationUnits",
+          "fix": "Ajouter un type compatible au noeud (ex. \"@type\": [\"Product\", \"ApartmentComplex\"]) ou deplacer la propriete.",
+          "docs": "https://schema.org/numberOfAccommodationUnits",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "schema-range-mismatch",
+          "category": "Vocabulaire schema.org",
+          "title": "Type de valeur inattendu pour numberOfAccommodationUnits",
+          "detail": "schema.org attend QuantitativeValue, la valeur fournie est un nombre.",
+          "path": "bloc 1 > numberOfAccommodationUnits",
+          "fix": "Fournir une valeur de type QuantitativeValue.",
+          "docs": "https://schema.org/numberOfAccommodationUnits",
+          "value": "63",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "coherence-price-hidden",
+          "category": "Coherence page / balisage",
+          "title": "highPrice (260000) introuvable dans le texte visible",
+          "detail": "Google exige que les donnees structurees decrivent un contenu visible par l'internaute. Un prix balise mais absent de la page est un motif d'action manuelle.",
+          "path": "bloc 1 > offers > highPrice",
+          "fix": "Afficher le prix sur la page, ou retirer la propriete du balisage.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/sd-policies",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "meta-description-length",
+          "category": "Head & meta",
+          "title": "Longueur de la meta description : 51 caracteres",
+          "detail": "Cible 70-160 caracteres.",
+          "path": null,
+          "fix": "Ajuster la longueur de la description.",
+          "docs": null,
+          "value": "À Moussy-le-Vieux, une ville verdoyante et paisible",
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "meta-img-alt",
+          "category": "Head & meta",
+          "title": "5 image(s) sur 9 sans attribut alt",
+          "detail": "Le texte alternatif alimente Google Images et l'accessibilite.",
+          "path": null,
+          "fix": "Renseigner alt sur les visuels porteurs de sens.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "google-product-recommended-aggregaterating",
+          "category": "Resultats enrichis Google",
+          "title": "Product : aggregateRating recommande",
+          "detail": "Note moyenne : declenche les etoiles dans le SERP.",
+          "path": "bloc 1",
+          "fix": "Ajouter aggregateRating.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/product",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "google-product-recommended-review",
+          "category": "Resultats enrichis Google",
+          "title": "Product : review recommande",
+          "detail": "Avis clients.",
+          "path": "bloc 1",
+          "fix": "Ajouter review.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/product",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "jsonld-whitespace",
+          "category": "Syntaxe JSON-LD",
+          "title": "Espaces superflus dans streetAddress",
+          "detail": "Espace en debut ou fin de valeur.",
+          "path": "bloc 1 > address.streetAddress",
+          "fix": "Appliquer un trim a la source.",
+          "docs": null,
+          "value": "\"35 rue du Puits d'Affetet\"",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "jsonld-whitespace",
+          "category": "Syntaxe JSON-LD",
+          "title": "Espaces superflus dans description",
+          "detail": "Espace en debut ou fin de valeur.",
+          "path": "bloc 1 > description",
+          "fix": "Appliquer un trim a la source.",
+          "docs": null,
+          "value": "\"Découvrez à Moussy le Vieux, charmante commune de Seine-et-Marne, une résidence à taille humaine dans un cadre de vie bucolique. Grâce à son…\"",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "geo-precision-latitude",
+          "category": "Qualite des donnees",
+          "title": "Precision excessive sur latitude",
+          "detail": "14 decimales, soit une precision sub-millimetrique sans interet. 6 decimales suffisent (~10 cm).",
+          "path": "bloc 1 > geo > latitude",
+          "fix": "Arrondir a 6 decimales.",
+          "docs": null,
+          "value": "49.04515584267932",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "geo-precision-longitude",
+          "category": "Qualite des donnees",
+          "title": "Precision excessive sur longitude",
+          "detail": "15 decimales, soit une precision sub-millimetrique sans interet. 6 decimales suffisent (~10 cm).",
+          "path": "bloc 1 > geo > longitude",
+          "fix": "Arrondir a 6 decimales.",
+          "docs": null,
+          "value": "2.630469759572514",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "coherence-image-og",
+          "category": "Coherence page / balisage",
+          "title": "Image structuree differente de og:image",
+          "detail": "JSON-LD : https://medias.kaufmanbroad.fr/dpalai148/image/upload/c_fill,w_1600,h_900,f_jpg/pim/perspectives/media/22181_360df_ext_2.jpg — og:image : https://medias.kaufmanbroad.fr/dpalai148/image/upload/w_1200,h_630/pim/perspectives/media/22181_360df_ext_2.jpg.",
+          "path": "bloc 1 > image",
+          "fix": "Aligner les deux sur le meme visuel principal.",
+          "docs": null,
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "jsonld-whitespace",
+          "category": "Syntaxe JSON-LD",
+          "title": "Espaces superflus dans name",
+          "detail": "Espace en debut ou fin de valeur.",
+          "path": "bloc 1 > name",
+          "fix": "Appliquer un trim a la source.",
+          "docs": null,
+          "value": "\"L'Orée du Puits\"",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "google-offer-url",
+          "category": "Resultats enrichis Google",
+          "title": "Offre sans url",
+          "detail": "L'URL de l'offre leve toute ambiguite sur la page de destination.",
+          "path": "bloc 1 > offers",
+          "fix": "Ajouter url avec l'URL canonique de la page.",
+          "docs": "https://schema.org/Offer",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "jsonld-whitespace",
+          "category": "Syntaxe JSON-LD",
+          "title": "Espaces superflus dans name",
+          "detail": "Espace en debut ou fin de valeur.",
+          "path": "bloc 2 > itemListElement[5].name",
+          "fix": "Appliquer un trim a la source.",
+          "docs": null,
+          "value": "\"L'orée du puits\"",
+          "tool": "structured-data"
+        }
+      ],
+      "structure": [
+        "<BreadcrumbList>itemListElement[]<ListItem>.item",
+        "<BreadcrumbList>itemListElement[]<ListItem>.name",
+        "<BreadcrumbList>itemListElement[]<ListItem>.position",
+        "<HousingComplex+Product>@id",
+        "<HousingComplex+Product>additionalProperty<PropertyValue>.name",
+        "<HousingComplex+Product>additionalProperty<PropertyValue>.value",
+        "<HousingComplex+Product>address<PostalAddress>.addressCountry",
+        "<HousingComplex+Product>address<PostalAddress>.addressLocality",
+        "<HousingComplex+Product>address<PostalAddress>.addressRegion",
+        "<HousingComplex+Product>address<PostalAddress>.postalCode",
+        "<HousingComplex+Product>address<PostalAddress>.streetAddress",
+        "<HousingComplex+Product>amenityFeature[]<LocationFeatureSpecification>.name",
+        "<HousingComplex+Product>description",
+        "<HousingComplex+Product>developer<Organization>.@id",
+        "<HousingComplex+Product>developer<Organization>.contactPoint<ContactPoint>.contactType",
+        "<HousingComplex+Product>developer<Organization>.contactPoint<ContactPoint>.telephone",
+        "<HousingComplex+Product>developer<Organization>.name",
+        "<HousingComplex+Product>developer<Organization>.url",
+        "<HousingComplex+Product>geo<GeoCoordinates>.latitude",
+        "<HousingComplex+Product>geo<GeoCoordinates>.longitude",
+        "<HousingComplex+Product>image[]<ImageObject>.@id",
+        "<HousingComplex+Product>image[]<ImageObject>.caption",
+        "<HousingComplex+Product>image[]<ImageObject>.contentUrl",
+        "<HousingComplex+Product>image[]<ImageObject>.copyrightNotice",
+        "<HousingComplex+Product>image[]<ImageObject>.creator.@id",
+        "<HousingComplex+Product>image[]<ImageObject>.creditText",
+        "<HousingComplex+Product>image[]<ImageObject>.encodingFormat",
+        "<HousingComplex+Product>image[]<ImageObject>.height<QuantitativeValue>.value",
+        "<HousingComplex+Product>image[]<ImageObject>.representativeOfPage",
+        "<HousingComplex+Product>image[]<ImageObject>.url",
+        "<HousingComplex+Product>image[]<ImageObject>.width<QuantitativeValue>.value",
+        "<HousingComplex+Product>name",
+        "<HousingComplex+Product>numberOfAccommodationUnits",
+        "<HousingComplex+Product>offers<AggregateOffer>.availability",
+        "<HousingComplex+Product>offers<AggregateOffer>.highPrice",
+        "<HousingComplex+Product>offers<AggregateOffer>.lowPrice",
+        "<HousingComplex+Product>offers<AggregateOffer>.offerCount",
+        "<HousingComplex+Product>offers<AggregateOffer>.priceCurrency",
+        "<HousingComplex+Product>url"
+      ],
+      "headShape": [
+        "canonical",
+        "description",
+        "lang",
+        "og.description",
+        "og.imageAlt",
+        "og.imageHeight",
+        "og.imageWidth",
+        "og.images",
+        "og.locale",
+        "og.siteName",
+        "og.title",
+        "og.type",
+        "og.url",
+        "robots",
+        "robots=index,follow",
+        "title",
+        "twitter.card",
+        "twitter.description",
+        "twitter.image",
+        "twitter.title",
+        "viewport"
+      ]
+    },
+    {
+      "slot": "lot-aleatoire",
+      "label": "Lot tire au hasard",
+      "kind": "aleatoire",
+      "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/occitanie/haute-garonne/saint-orens-de-gameville/lot/Commerce/33121_64",
+      "blocked": false,
+      "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/occitanie/haute-garonne/saint-orens-de-gameville/lot/Commerce/33121_64",
+      "template": "lot",
+      "mainType": "Accommodation + Product",
+      "fetch": {
+        "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/occitanie/haute-garonne/saint-orens-de-gameville/lot/Commerce/33121_64",
+        "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/occitanie/haute-garonne/saint-orens-de-gameville/lot/Commerce/33121_64",
+        "status": 200,
+        "redirected": false,
+        "contentType": "text/html; charset=utf-8",
+        "xRobotsTag": null,
+        "elapsedMs": 900,
+        "bytes": 166724
+      },
+      "score": 84,
+      "counts": {
+        "error": 0,
+        "warning": 4,
+        "info": 12,
+        "success": 0
+      },
+      "tools": [
+        {
+          "key": "structured-data",
+          "label": "Donnees structurees",
+          "score": 73,
+          "counts": {
+            "error": 0,
+            "warning": 4,
+            "info": 11,
+            "success": 0
+          }
+        },
+        {
+          "key": "head-meta",
+          "label": "Head & meta",
+          "score": 99,
+          "counts": {
+            "error": 0,
+            "warning": 0,
+            "info": 1,
+            "success": 0
+          }
+        },
+        {
+          "key": "http-indexing",
+          "label": "HTTP & indexation",
+          "score": 100,
+          "counts": {
+            "error": 0,
+            "warning": 0,
+            "info": 0,
+            "success": 0
+          }
+        }
+      ],
+      "issues": [
+        {
+          "severity": "warning",
+          "id": "jsonld-html-in-value",
+          "category": "Syntaxe JSON-LD",
+          "title": "HTML ou entite HTML dans description",
+          "detail": "Les valeurs JSON-LD doivent etre du texte brut. Les balises et entites sont affichees telles quelles dans les resultats enrichis.",
+          "path": "bloc 1 > description",
+          "fix": "Decoder les entites et retirer les balises avant la serialisation JSON.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/sd-policies",
+          "value": "<p class=\"\">Saisissez l’opportunité rare d’acquérir un local commercial au cœur de Saint-Orens, au sein de la résidence neuve La Trend, une …",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "schema-property-out-of-domain",
+          "category": "Vocabulaire schema.org",
+          "title": "isPartOf n'est pas une propriete de Accommodation + Product",
+          "detail": "schema.org declare isPartOf sur : CreativeWork. Hors domaine, la propriete est ignoree (et signalee par le Rich Results Test).",
+          "path": "bloc 1 > isPartOf",
+          "fix": "Ajouter un type compatible au noeud (ex. \"@type\": [\"Accommodation\", \"CreativeWork\"]) ou deplacer la propriete.",
+          "docs": "https://schema.org/isPartOf",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "schema-range-mismatch",
+          "category": "Vocabulaire schema.org",
+          "title": "Type de valeur inattendu pour isPartOf",
+          "detail": "schema.org attend CreativeWork | URL, la valeur fournie est un objet de type ApartmentComplex.",
+          "path": "bloc 1 > isPartOf",
+          "fix": "Fournir une valeur de type CreativeWork.",
+          "docs": "https://schema.org/isPartOf",
+          "value": "{\"@type\":\"ApartmentComplex\",\"name\":\"La Trend\",\"url\":\"https://www.kaufmanbroad.fr/achat-immobilier-neuf/occitanie/haute-g",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "warning",
+          "id": "coherence-name-h1",
+          "category": "Coherence page / balisage",
+          "title": "name des donnees structurees eloigne du H1",
+          "detail": "name : « Local commercial 90 m² à Saint-Orens-de-Gameville » — H1 : « Local commercial 90 m² ». Seuls 40 % des mots du name se retrouvent dans le H1.",
+          "path": "bloc 1 > name",
+          "fix": "Aligner le libelle structure sur le titre visible de la page.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/sd-policies",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "meta-img-alt",
+          "category": "Head & meta",
+          "title": "5 image(s) sur 8 sans attribut alt",
+          "detail": "Le texte alternatif alimente Google Images et l'accessibilite.",
+          "path": null,
+          "fix": "Renseigner alt sur les visuels porteurs de sens.",
+          "docs": null,
+          "value": null,
+          "tool": "head-meta"
+        },
+        {
+          "severity": "info",
+          "id": "google-product-recommended-aggregaterating",
+          "category": "Resultats enrichis Google",
+          "title": "Product : aggregateRating recommande",
+          "detail": "Note moyenne : declenche les etoiles dans le SERP.",
+          "path": "bloc 1",
+          "fix": "Ajouter aggregateRating.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/product",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "google-product-recommended-review",
+          "category": "Resultats enrichis Google",
+          "title": "Product : review recommande",
+          "detail": "Avis clients.",
+          "path": "bloc 1",
+          "fix": "Ajouter review.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/product",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "kb-recommended-numberofbathroomstotal",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "numberOfBathroomsTotal absent sur Accommodation + Product",
+          "detail": "Nombre de salles de bain / salles d'eau.",
+          "path": "bloc 1",
+          "fix": "Ajouter numberOfBathroomsTotal.",
+          "docs": "https://schema.org/numberOfBathroomsTotal",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "kb-recommended-floorlevel",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "floorLevel absent sur Accommodation + Product",
+          "detail": "Etage du lot.",
+          "path": "bloc 1",
+          "fix": "Ajouter floorLevel.",
+          "docs": "https://schema.org/floorLevel",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "kb-recommended-yearbuilt",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "yearBuilt absent sur Accommodation + Product",
+          "detail": "Annee de livraison prevue.",
+          "path": "bloc 1",
+          "fix": "Ajouter yearBuilt.",
+          "docs": "https://schema.org/yearBuilt",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "kb-recommended-tourbookingpage",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "tourBookingPage absent sur Accommodation + Product",
+          "detail": "Page de prise de rendez-vous, si elle existe.",
+          "path": "bloc 1",
+          "fix": "Ajouter tourBookingPage.",
+          "docs": "https://schema.org/tourBookingPage",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "kb-dpe-missing",
+          "category": "Gabarit Kaufman & Broad",
+          "title": "Performance energetique (DPE) non balisee",
+          "detail": "Le DPE / GES est affiche sur la page et obligatoire dans les annonces : le baliser via hasEnergyConsumptionDetails (EnergyConsumptionDetails) le rend exploitable par les moteurs et les agregateurs.",
+          "path": "bloc 1",
+          "fix": "Ajouter hasEnergyConsumptionDetails avec energyEfficiencyScaleMin / energyEfficiencyScaleMax.",
+          "docs": "https://schema.org/EnergyConsumptionDetails",
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "jsonld-whitespace",
+          "category": "Syntaxe JSON-LD",
+          "title": "Espaces superflus dans streetAddress",
+          "detail": "Espace en debut ou fin de valeur.",
+          "path": "bloc 1 > address.streetAddress",
+          "fix": "Appliquer un trim a la source.",
+          "docs": null,
+          "value": "\"13 avenue de Toulouse\"",
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "coherence-description-meta",
+          "category": "Coherence page / balisage",
+          "title": "description structuree differente de la meta description",
+          "detail": "Ce n'est pas une erreur, mais deux descriptions divergentes signalent souvent deux sources de donnees non synchronisees.",
+          "path": "bloc 1 > description",
+          "fix": "Verifier que les deux proviennent du meme champ metier.",
+          "docs": null,
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "coherence-image-og",
+          "category": "Coherence page / balisage",
+          "title": "Image structuree differente de og:image",
+          "detail": "JSON-LD : https://medias.kaufmanbroad.fr/dpalai148/image/upload/c_fill,w_1600,h_900,f_jpg/pim/unitImages/media/Visuel_gen_COMMERCE_2.jpg — og:image : https://medias.kaufmanbroad.fr/dpalai148/image/upload/w_1200,h_630/pim/unitImages/media/Visuel_gen_COMMERCE_2.jpg.",
+          "path": "bloc 1 > image",
+          "fix": "Aligner les deux sur le meme visuel principal.",
+          "docs": null,
+          "value": null,
+          "tool": "structured-data"
+        },
+        {
+          "severity": "info",
+          "id": "google-offer-pricevaliduntil",
+          "category": "Resultats enrichis Google",
+          "title": "Offer sans priceValidUntil",
+          "detail": "Google avertit sur ce champ : sans lui, le prix peut etre considere comme perime.",
+          "path": "bloc 1 > offers",
+          "fix": "Ajouter priceValidUntil au format AAAA-MM-JJ.",
+          "docs": "https://developers.google.com/search/docs/appearance/structured-data/product",
+          "value": null,
+          "tool": "structured-data"
+        }
+      ],
+      "structure": [
+        "<Accommodation+Product>@id",
+        "<Accommodation+Product>additionalProperty<PropertyValue>.name",
+        "<Accommodation+Product>additionalProperty<PropertyValue>.value",
+        "<Accommodation+Product>address<PostalAddress>.addressCountry",
+        "<Accommodation+Product>address<PostalAddress>.addressLocality",
+        "<Accommodation+Product>address<PostalAddress>.addressRegion",
+        "<Accommodation+Product>address<PostalAddress>.postalCode",
+        "<Accommodation+Product>address<PostalAddress>.streetAddress",
+        "<Accommodation+Product>brand<Brand>.name",
+        "<Accommodation+Product>category",
+        "<Accommodation+Product>description",
+        "<Accommodation+Product>floorSize<QuantitativeValue>.unitCode",
+        "<Accommodation+Product>floorSize<QuantitativeValue>.value",
+        "<Accommodation+Product>geo<GeoCoordinates>.latitude",
+        "<Accommodation+Product>geo<GeoCoordinates>.longitude",
+        "<Accommodation+Product>identifier",
+        "<Accommodation+Product>image[]<ImageObject>.@id",
+        "<Accommodation+Product>image[]<ImageObject>.caption",
+        "<Accommodation+Product>image[]<ImageObject>.contentUrl",
+        "<Accommodation+Product>image[]<ImageObject>.copyrightNotice",
+        "<Accommodation+Product>image[]<ImageObject>.creator.@id",
+        "<Accommodation+Product>image[]<ImageObject>.creditText",
+        "<Accommodation+Product>image[]<ImageObject>.encodingFormat",
+        "<Accommodation+Product>image[]<ImageObject>.height<QuantitativeValue>.value",
+        "<Accommodation+Product>image[]<ImageObject>.representativeOfPage",
+        "<Accommodation+Product>image[]<ImageObject>.url",
+        "<Accommodation+Product>image[]<ImageObject>.width<QuantitativeValue>.value",
+        "<Accommodation+Product>isPartOf<ApartmentComplex>.name",
+        "<Accommodation+Product>isPartOf<ApartmentComplex>.url",
+        "<Accommodation+Product>name",
+        "<Accommodation+Product>numberOfBedrooms",
+        "<Accommodation+Product>numberOfRooms",
+        "<Accommodation+Product>offers<Offer>.availability",
+        "<Accommodation+Product>offers<Offer>.itemCondition",
+        "<Accommodation+Product>offers<Offer>.price",
+        "<Accommodation+Product>offers<Offer>.priceCurrency",
+        "<Accommodation+Product>offers<Offer>.seller<Organization>.@id",
+        "<Accommodation+Product>offers<Offer>.seller<Organization>.contactPoint<ContactPoint>.contactType",
+        "<Accommodation+Product>offers<Offer>.seller<Organization>.contactPoint<ContactPoint>.telephone",
+        "<Accommodation+Product>offers<Offer>.seller<Organization>.name",
+        "<Accommodation+Product>offers<Offer>.seller<Organization>.url",
+        "<Accommodation+Product>offers<Offer>.url",
+        "<Accommodation+Product>sku",
+        "<Accommodation+Product>url",
+        "<BreadcrumbList>itemListElement[]<ListItem>.item",
+        "<BreadcrumbList>itemListElement[]<ListItem>.name",
+        "<BreadcrumbList>itemListElement[]<ListItem>.position"
+      ],
+      "headShape": [
+        "canonical",
+        "description",
+        "lang",
+        "og.description",
+        "og.imageAlt",
+        "og.imageHeight",
+        "og.imageWidth",
+        "og.images",
+        "og.locale",
+        "og.siteName",
+        "og.title",
+        "og.type",
+        "og.url",
+        "robots",
+        "robots=index,follow",
+        "title",
+        "twitter.card",
+        "twitter.description",
+        "twitter.image",
+        "twitter.title",
+        "viewport"
+      ]
+    }
+  ],
+  "diff": {
+    "previousDate": "2026-10-15",
+    "scoreBefore": 77,
+    "scoreAfter": 77,
+    "site": {
+      "added": [],
+      "resolved": []
+    },
+    "sitemap": {
+      "total": [
+        2542,
+        2538
+      ],
+      "programmes": [
+        169,
+        171
+      ],
+      "lots": [
+        1791,
+        1785
+      ]
+    },
+    "pages": [
+      {
+        "slot": "home",
+        "samePage": true,
+        "scoreBefore": 81,
+        "scoreAfter": 81,
+        "issues": {
+          "added": [],
+          "resolved": []
+        },
+        "structure": {
+          "added": [],
+          "removed": []
+        },
+        "headShape": {
+          "added": [],
+          "removed": []
+        }
+      },
+      {
+        "slot": "programme-temoin",
+        "samePage": true,
+        "scoreBefore": 58,
+        "scoreAfter": 58,
+        "issues": {
+          "added": [],
+          "resolved": []
+        },
+        "structure": {
+          "added": [],
+          "removed": []
+        },
+        "headShape": {
+          "added": [],
+          "removed": []
+        }
+      },
+      {
+        "slot": "lot-temoin",
+        "samePage": true,
+        "scoreBefore": 82,
+        "scoreAfter": 82,
+        "issues": {
+          "added": [],
+          "resolved": []
+        },
+        "structure": {
+          "added": [],
+          "removed": []
+        },
+        "headShape": {
+          "added": [],
+          "removed": []
+        }
+      },
+      {
+        "slot": "programme-aleatoire",
+        "samePage": false,
+        "previousUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/grand-est/bas-rhin/strasbourg/programme/65171",
+        "scoreBefore": 58,
+        "scoreAfter": 57,
+        "issues": {
+          "added": [
+            {
+              "severity": "info",
+              "id": "jsonld-whitespace",
+              "title": "Espaces superflus dans description",
+              "path": "bloc 1 > description",
+              "value": "\"Découvrez à Moussy le Vieux, charmante commune de Seine-et-Marne, une résidence à taille humaine dans un cadre de vie bucolique. Grâce à son…\"",
+              "fix": "Appliquer un trim a la source."
+            },
+            {
+              "severity": "info",
+              "id": "jsonld-whitespace",
+              "title": "Espaces superflus dans name",
+              "path": "bloc 1 > name",
+              "value": "\"L'Orée du Puits\"",
+              "fix": "Appliquer un trim a la source."
+            },
+            {
+              "severity": "info",
+              "id": "jsonld-whitespace",
+              "title": "Espaces superflus dans name",
+              "path": "bloc 2 > itemListElement[5].name",
+              "value": "\"L'orée du puits\"",
+              "fix": "Appliquer un trim a la source."
+            }
+          ],
+          "resolved": []
+        }
+      },
+      {
+        "slot": "lot-aleatoire",
+        "samePage": false,
+        "previousUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/yvelines/houdan/lot/Maison/29891_8",
+        "scoreBefore": 83,
+        "scoreAfter": 84,
+        "issues": {
+          "added": [
+            {
+              "severity": "warning",
+              "id": "schema-range-mismatch",
+              "title": "Type de valeur inattendu pour isPartOf",
+              "path": "bloc 1 > isPartOf",
+              "value": "{\"@type\":\"ApartmentComplex\",\"name\":\"La Trend\",\"url\":\"https://www.kaufmanbroad.fr/achat-immobilier-neuf/occitanie/haute-g",
+              "fix": "Fournir une valeur de type CreativeWork."
+            },
+            {
+              "severity": "warning",
+              "id": "coherence-name-h1",
+              "title": "name des donnees structurees eloigne du H1",
+              "path": "bloc 1 > name",
+              "value": null,
+              "fix": "Aligner le libelle structure sur le titre visible de la page."
+            }
+          ],
+          "resolved": [
+            {
+              "severity": "error",
+              "id": "schema-unknown-type",
+              "title": "Type inconnu : HousingComplex",
+              "path": "bloc 1 > isPartOf",
+              "value": "HousingComplex",
+              "fix": "Remplacer par un type existant : ApartmentComplex, TennisComplex."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "alerts": []
+}
