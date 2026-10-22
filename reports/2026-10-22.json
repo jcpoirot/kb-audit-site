@@ -1,7 +1,7 @@
 {
   "date": "2026-10-22",
-  "generatedAt": "2026-10-22T08:41:37.230Z",
-  "elapsedMs": 19179,
+  "generatedAt": "2026-10-22T13:45:26.067Z",
+  "elapsedMs": 14502,
   "config": {
     "site": "https://www.kaufmanbroad.fr",
     "sitemap": "https://www.kaufmanbroad.fr/sitemap.xml"
@@ -10,76 +10,76 @@
   "programs": {
     "total": 2175,
     "diffused": 139,
-    "lastModified": "Thu, 22 Oct 2026 08:06:19 GMT"
+    "lastModified": "Thu, 22 Oct 2026 12:09:10 GMT"
   },
   "site": {
     "issues": [],
     "score": 100,
     "sitemap": {
-      "total": 2589,
+      "total": 2562,
       "programmes": 160,
-      "lots": 1846,
+      "lots": 1819,
       "duplicates": 0,
       "sampleChecked": [
         {
-          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/yvelines/houdan/lot/Parking/29871_227",
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/hauts-de-seine/chatenay-malabry",
           "status": 200,
-          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/yvelines/houdan/lot/Parking/29871_227",
-          "elapsedMs": 1888
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/hauts-de-seine/chatenay-malabry",
+          "elapsedMs": 659
         },
         {
-          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/normandie/calvados/lisieux/lot/Appartement/72791_26",
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/auvergne-rhone-alpes/isere/la-verpilliere/lot/Appartement/72881_23",
           "status": 200,
-          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/normandie/calvados/lisieux/lot/Appartement/72791_26",
-          "elapsedMs": 1155
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/auvergne-rhone-alpes/isere/la-verpilliere/lot/Appartement/72881_23",
+          "elapsedMs": 711
         },
         {
-          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/auvergne-rhone-alpes/isere/la-verpilliere/lot/Appartement/72881_38",
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/auvergne-rhone-alpes/haute-savoie/archamps/lot/Appartement/42301_64",
           "status": 200,
-          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/auvergne-rhone-alpes/isere/la-verpilliere/lot/Appartement/72881_38",
-          "elapsedMs": 860
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/auvergne-rhone-alpes/haute-savoie/archamps/lot/Appartement/42301_64",
+          "elapsedMs": 723
         },
         {
-          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/wissous/programme/28781",
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/ollainville/lot/Maison/21071_39",
           "status": 200,
-          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/wissous/programme/28781",
-          "elapsedMs": 896
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/ollainville/lot/Maison/21071_39",
+          "elapsedMs": 693
         },
         {
-          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/hauts-de-seine/courbevoie/lot/Appartement/30021_90",
+          "url": "https://www.kaufmanbroad.fr/conseils/les-conseils-pour-investir/investir-en-residence-etudiante",
           "status": 200,
-          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/hauts-de-seine/courbevoie/lot/Appartement/30021_90",
-          "elapsedMs": 903
+          "finalUrl": "https://www.kaufmanbroad.fr/conseils/les-conseils-pour-investir/investir-en-residence-etudiante",
+          "elapsedMs": 704
         },
         {
-          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-d-oise/le-plessis-bouchard/programme/29953",
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/bretigny-sur-orge/lot/Appartement/29311_8",
           "status": 200,
-          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/val-d-oise/le-plessis-bouchard/programme/29953",
-          "elapsedMs": 798
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/bretigny-sur-orge/lot/Appartement/29311_8",
+          "elapsedMs": 697
         },
         {
-          "url": "https://www.kaufmanbroad.fr/conseils/lexperience-kaufman-et-broad/achat-immobilier-comment-trouver-un-logement-a-distance",
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/pays-de-la-loire/vendee/challans/lot/Appartement/73111_VIRTUEL4",
           "status": 200,
-          "finalUrl": "https://www.kaufmanbroad.fr/conseils/lexperience-kaufman-et-broad/achat-immobilier-comment-trouver-un-logement-a-distance",
-          "elapsedMs": 884
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/pays-de-la-loire/vendee/challans/lot/Appartement/73111_VIRTUEL4",
+          "elapsedMs": 729
         },
         {
-          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/auvergne-rhone-alpes/savoie/bourg-saint-maurice/programme/42491",
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/auvergne-rhone-alpes/haute-savoie/seynod",
           "status": 200,
-          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/auvergne-rhone-alpes/savoie/bourg-saint-maurice/programme/42491",
-          "elapsedMs": 1025
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/auvergne-rhone-alpes/haute-savoie/seynod",
+          "elapsedMs": 720
         },
         {
-          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/occitanie/haute-garonne/saint-orens-de-gameville/lot/Appartement/33121_43",
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/occitanie/haute-garonne/villeneuve-tolosane/lot/Appartement/52631_VIRTUEL2",
           "status": 200,
-          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/occitanie/haute-garonne/saint-orens-de-gameville/lot/Appartement/33121_43",
-          "elapsedMs": 999
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/occitanie/haute-garonne/villeneuve-tolosane/lot/Appartement/52631_VIRTUEL2",
+          "elapsedMs": 676
         },
         {
-          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/hauts-de-seine/meudon/lot/Appartement/18531_35",
+          "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/saclay/lot/Appartement/30051_7",
           "status": 200,
-          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/hauts-de-seine/meudon/lot/Appartement/18531_35",
-          "elapsedMs": 862
+          "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/saclay/lot/Appartement/30051_7",
+          "elapsedMs": 696
         }
       ]
     }
@@ -101,7 +101,7 @@
         "redirected": false,
         "contentType": "text/html; charset=utf-8",
         "xRobotsTag": null,
-        "elapsedMs": 954,
+        "elapsedMs": 742,
         "bytes": 233219
       },
       "score": 81,
@@ -343,7 +343,7 @@
         "redirected": false,
         "contentType": "text/html; charset=utf-8",
         "xRobotsTag": null,
-        "elapsedMs": 906,
+        "elapsedMs": 828,
         "bytes": 257544
       },
       "score": 58,
@@ -735,7 +735,7 @@
         "redirected": false,
         "contentType": "text/html; charset=utf-8",
         "xRobotsTag": null,
-        "elapsedMs": 934,
+        "elapsedMs": 712,
         "bytes": 180048
       },
       "score": 82,
@@ -1063,37 +1063,37 @@
       "slot": "programme-aleatoire",
       "label": "Programme tire au hasard",
       "kind": "aleatoire",
-      "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/seine-et-marne/moussy-le-vieux/programme/22181",
+      "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/yvelines/houdan/programme/29881",
       "blocked": false,
-      "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/seine-et-marne/moussy-le-vieux/programme/22181",
+      "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/yvelines/houdan/programme/29881",
       "template": "programme",
       "mainType": null,
       "fetch": {
-        "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/seine-et-marne/moussy-le-vieux/programme/22181",
-        "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/seine-et-marne/moussy-le-vieux/programme/22181",
+        "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/yvelines/houdan/programme/29881",
+        "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/yvelines/houdan/programme/29881",
         "status": 200,
         "redirected": false,
         "contentType": "text/html; charset=utf-8",
         "xRobotsTag": null,
-        "elapsedMs": 988,
-        "bytes": 327960
+        "elapsedMs": 833,
+        "bytes": 549584
       },
-      "score": 57,
+      "score": 59,
       "counts": {
         "error": 3,
         "warning": 9,
-        "info": 12,
+        "info": 7,
         "success": 0
       },
       "tools": [
         {
           "key": "structured-data",
           "label": "Donnees structurees",
-          "score": 28,
+          "score": 33,
           "counts": {
             "error": 3,
             "warning": 8,
-            "info": 10,
+            "info": 5,
             "success": 0
           }
         },
@@ -1161,12 +1161,12 @@
           "severity": "warning",
           "id": "meta-title-length",
           "category": "Head & meta",
-          "title": "Longueur du title : 78 caracteres",
+          "title": "Longueur du title : 77 caracteres",
           "detail": "Cible 30-65 caracteres. Au-dela, Google tronque l'affichage.",
           "path": null,
           "fix": "Ajuster la longueur du title.",
           "docs": null,
-          "value": "Programme immobilier neuf l'orée du puits  à moussy-le-vieux | Kaufman & Broad",
+          "value": "Programme immobilier neuf domaine des longs champs à houdan | Kaufman & Broad",
           "tool": "head-meta"
         },
         {
@@ -1214,7 +1214,7 @@
           "path": "bloc 1 > description",
           "fix": "Decoder les entites et retirer les balises avant la serialisation JSON.",
           "docs": "https://developers.google.com/search/docs/appearance/structured-data/sd-policies",
-          "value": "Découvrez à Moussy le Vieux, charmante commune de Seine-et-Marne, une résidence à taille humaine dans un cadre de vie bucolique. Grâce à son…",
+          "value": "Ce projet d’exception se développe dans un environnement de verdure et s’organise autour de grands jardins paysagers agrémentés d’une pommer…",
           "tool": "structured-data"
         },
         {
@@ -1250,14 +1250,14 @@
           "path": "bloc 1 > numberOfAccommodationUnits",
           "fix": "Fournir une valeur de type QuantitativeValue.",
           "docs": "https://schema.org/numberOfAccommodationUnits",
-          "value": "63",
+          "value": "38",
           "tool": "structured-data"
         },
         {
           "severity": "warning",
           "id": "coherence-price-hidden",
           "category": "Coherence page / balisage",
-          "title": "highPrice (260000) introuvable dans le texte visible",
+          "title": "highPrice (385000) introuvable dans le texte visible",
           "detail": "Google exige que les donnees structurees decrivent un contenu visible par l'internaute. Un prix balise mais absent de la page est un motif d'action manuelle.",
           "path": "bloc 1 > offers > highPrice",
           "fix": "Afficher le prix sur la page, ou retirer la propriete du balisage.",
@@ -1269,19 +1269,19 @@
           "severity": "info",
           "id": "meta-description-length",
           "category": "Head & meta",
-          "title": "Longueur de la meta description : 51 caracteres",
+          "title": "Longueur de la meta description : 46 caracteres",
           "detail": "Cible 70-160 caracteres.",
           "path": null,
           "fix": "Ajuster la longueur de la description.",
           "docs": null,
-          "value": "À Moussy-le-Vieux, une ville verdoyante et paisible",
+          "value": "Une valeur patrimoniale montante des Yvelines ",
           "tool": "head-meta"
         },
         {
           "severity": "info",
           "id": "meta-img-alt",
           "category": "Head & meta",
-          "title": "5 image(s) sur 9 sans attribut alt",
+          "title": "5 image(s) sur 14 sans attribut alt",
           "detail": "Le texte alternatif alimente Google Images et l'accessibilite.",
           "path": null,
           "fix": "Renseigner alt sur les visuels porteurs de sens.",
@@ -1322,43 +1322,7 @@
           "path": "bloc 1 > address.streetAddress",
           "fix": "Appliquer un trim a la source.",
           "docs": null,
-          "value": "\"35 rue du Puits d'Affetet\"",
-          "tool": "structured-data"
-        },
-        {
-          "severity": "info",
-          "id": "jsonld-whitespace",
-          "category": "Syntaxe JSON-LD",
-          "title": "Espaces superflus dans description",
-          "detail": "Espace en debut ou fin de valeur.",
-          "path": "bloc 1 > description",
-          "fix": "Appliquer un trim a la source.",
-          "docs": null,
-          "value": "\"Découvrez à Moussy le Vieux, charmante commune de Seine-et-Marne, une résidence à taille humaine dans un cadre de vie bucolique. Grâce à son…\"",
-          "tool": "structured-data"
-        },
-        {
-          "severity": "info",
-          "id": "geo-precision-latitude",
-          "category": "Qualite des donnees",
-          "title": "Precision excessive sur latitude",
-          "detail": "14 decimales, soit une precision sub-millimetrique sans interet. 6 decimales suffisent (~10 cm).",
-          "path": "bloc 1 > geo > latitude",
-          "fix": "Arrondir a 6 decimales.",
-          "docs": null,
-          "value": "49.04515584267932",
-          "tool": "structured-data"
-        },
-        {
-          "severity": "info",
-          "id": "geo-precision-longitude",
-          "category": "Qualite des donnees",
-          "title": "Precision excessive sur longitude",
-          "detail": "15 decimales, soit une precision sub-millimetrique sans interet. 6 decimales suffisent (~10 cm).",
-          "path": "bloc 1 > geo > longitude",
-          "fix": "Arrondir a 6 decimales.",
-          "docs": null,
-          "value": "2.630469759572514",
+          "value": "\"Rue de Paris - Site de la Prévôté\"",
           "tool": "structured-data"
         },
         {
@@ -1366,23 +1330,11 @@
           "id": "coherence-image-og",
           "category": "Coherence page / balisage",
           "title": "Image structuree differente de og:image",
-          "detail": "JSON-LD : https://medias.kaufmanbroad.fr/dpalai148/image/upload/c_fill,w_1600,h_900,f_jpg/pim/perspectives/media/22181_360df_ext_2.jpg — og:image : https://medias.kaufmanbroad.fr/dpalai148/image/upload/w_1200,h_630/pim/perspectives/media/22181_360df_ext_2.jpg.",
+          "detail": "JSON-LD : https://medias.kaufmanbroad.fr/dpalai148/image/upload/c_fill,w_1600,h_900,f_jpg/pim/perspectives/media/KB_Houdan_EXTM1_V03_1_.jpg — og:image : https://medias.kaufmanbroad.fr/dpalai148/image/upload/w_1200,h_630/pim/perspectives/media/KB_Houdan_EXTM1_V03_1_.jpg.",
           "path": "bloc 1 > image",
           "fix": "Aligner les deux sur le meme visuel principal.",
           "docs": null,
           "value": null,
-          "tool": "structured-data"
-        },
-        {
-          "severity": "info",
-          "id": "jsonld-whitespace",
-          "category": "Syntaxe JSON-LD",
-          "title": "Espaces superflus dans name",
-          "detail": "Espace en debut ou fin de valeur.",
-          "path": "bloc 1 > name",
-          "fix": "Appliquer un trim a la source.",
-          "docs": null,
-          "value": "\"L'Orée du Puits\"",
           "tool": "structured-data"
         },
         {
@@ -1395,18 +1347,6 @@
           "fix": "Ajouter url avec l'URL canonique de la page.",
           "docs": "https://schema.org/Offer",
           "value": null,
-          "tool": "structured-data"
-        },
-        {
-          "severity": "info",
-          "id": "jsonld-whitespace",
-          "category": "Syntaxe JSON-LD",
-          "title": "Espaces superflus dans name",
-          "detail": "Espace en debut ou fin de valeur.",
-          "path": "bloc 2 > itemListElement[5].name",
-          "fix": "Appliquer un trim a la source.",
-          "docs": null,
-          "value": "\"L'orée du puits\"",
           "tool": "structured-data"
         }
       ],
@@ -1479,47 +1419,47 @@
       "slot": "lot-aleatoire",
       "label": "Lot tire au hasard",
       "kind": "aleatoire",
-      "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/saclay/lot/Appartement/30051_4",
+      "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/seine-et-marne/ozoir-la-ferriere/lot/Appartement/22791_31",
       "blocked": false,
-      "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/saclay/lot/Appartement/30051_4",
+      "url": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/seine-et-marne/ozoir-la-ferriere/lot/Appartement/22791_31",
       "template": "lot",
       "mainType": "Apartment + Product",
       "fetch": {
-        "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/saclay/lot/Appartement/30051_4",
-        "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/essonne/saclay/lot/Appartement/30051_4",
+        "requestedUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/seine-et-marne/ozoir-la-ferriere/lot/Appartement/22791_31",
+        "finalUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/seine-et-marne/ozoir-la-ferriere/lot/Appartement/22791_31",
         "status": 200,
         "redirected": false,
         "contentType": "text/html; charset=utf-8",
         "xRobotsTag": null,
-        "elapsedMs": 828,
-        "bytes": 180277
+        "elapsedMs": 704,
+        "bytes": 183213
       },
       "score": 84,
       "counts": {
         "error": 0,
-        "warning": 3,
-        "info": 16,
+        "warning": 4,
+        "info": 14,
         "success": 0
       },
       "tools": [
         {
           "key": "structured-data",
           "label": "Donnees structurees",
-          "score": 73,
+          "score": 75,
           "counts": {
             "error": 0,
             "warning": 3,
-            "info": 15,
+            "info": 13,
             "success": 0
           }
         },
         {
           "key": "head-meta",
           "label": "Head & meta",
-          "score": 99,
+          "score": 95,
           "counts": {
             "error": 0,
-            "warning": 0,
+            "warning": 1,
             "info": 1,
             "success": 0
           }
@@ -1539,6 +1479,18 @@
       "issues": [
         {
           "severity": "warning",
+          "id": "meta-title-length",
+          "category": "Head & meta",
+          "title": "Longueur du title : 74 caracteres",
+          "detail": "Cible 30-65 caracteres. Au-dela, Google tronque l'affichage.",
+          "path": null,
+          "fix": "Ajuster la longueur du title.",
+          "docs": null,
+          "value": "Achat appartement neuf 2 pièces - les terrasses du 105 - Ozoir-la-ferrière",
+          "tool": "head-meta"
+        },
+        {
+          "severity": "warning",
           "id": "jsonld-html-in-value",
           "category": "Syntaxe JSON-LD",
           "title": "HTML ou entite HTML dans description",
@@ -1546,7 +1498,7 @@
           "path": "bloc 1 > description",
           "fix": "Decoder les entites et retirer les balises avant la serialisation JSON.",
           "docs": "https://developers.google.com/search/docs/appearance/structured-data/sd-policies",
-          "value": "Studio de 44,5 m² au rez-de-chaussée du Clos des Meulières à Saclay, offrant un cadre de vie paisible au cœur du village, proche commerces e…",
+          "value": "Ce 2 pièces à Ozoir-la-Ferrière, au sein de l’opération Les Terrasses du 105, offre un cadre de vie alliant verdure et proximité des commerc…",
           "tool": "structured-data"
         },
         {
@@ -1570,14 +1522,14 @@
           "path": "bloc 1 > isPartOf",
           "fix": "Fournir une valeur de type CreativeWork.",
           "docs": "https://schema.org/isPartOf",
-          "value": "{\"@type\":\"ApartmentComplex\",\"name\":\"Le Clos des Meulières \",\"url\":\"https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile",
+          "value": "{\"@type\":\"ApartmentComplex\",\"name\":\"Les Terrasses du 105\",\"url\":\"https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-d",
           "tool": "structured-data"
         },
         {
           "severity": "info",
           "id": "meta-img-alt",
           "category": "Head & meta",
-          "title": "5 image(s) sur 10 sans attribut alt",
+          "title": "5 image(s) sur 9 sans attribut alt",
           "detail": "Le texte alternatif alimente Google Images et l'accessibilite.",
           "path": null,
           "fix": "Renseigner alt sur les visuels porteurs de sens.",
@@ -1678,7 +1630,7 @@
           "path": "bloc 1 > address.streetAddress",
           "fix": "Appliquer un trim a la source.",
           "docs": null,
-          "value": "\"30-34 rue de Paris\"",
+          "value": "\"105 avenue du Général de Gaulle\"",
           "tool": "structured-data"
         },
         {
@@ -1698,11 +1650,11 @@
           "id": "geo-precision-latitude",
           "category": "Qualite des donnees",
           "title": "Precision excessive sur latitude",
-          "detail": "13 decimales, soit une precision sub-millimetrique sans interet. 6 decimales suffisent (~10 cm).",
+          "detail": "14 decimales, soit une precision sub-millimetrique sans interet. 6 decimales suffisent (~10 cm).",
           "path": "bloc 1 > geo > latitude",
           "fix": "Arrondir a 6 decimales.",
           "docs": null,
-          "value": "48.7333667458601",
+          "value": "48.76358321353139",
           "tool": "structured-data"
         },
         {
@@ -1714,7 +1666,7 @@
           "path": "bloc 1 > geo > longitude",
           "fix": "Arrondir a 6 decimales.",
           "docs": null,
-          "value": "2.174581039451587",
+          "value": "2.663805040398668",
           "tool": "structured-data"
         },
         {
@@ -1722,23 +1674,11 @@
           "id": "coherence-image-og",
           "category": "Coherence page / balisage",
           "title": "Image structuree differente de og:image",
-          "detail": "JSON-LD : https://medias.kaufmanbroad.fr/dpalai148/image/upload/c_fill,w_1600,h_900,f_jpg/pim/unitImages/media/30051_B202_iav1_salon_1.jpg — og:image : https://medias.kaufmanbroad.fr/dpalai148/image/upload/w_1200,h_630/pim/unitImages/media/30051_B202_iav1_salon_1.jpg.",
+          "detail": "JSON-LD : https://medias.kaufmanbroad.fr/dpalai148/image/upload/c_fill,w_1600,h_900,f_jpg/pim/unitImages/media/22791_149_iav1_salon_3.jpg — og:image : https://medias.kaufmanbroad.fr/dpalai148/image/upload/w_1200,h_630/pim/unitImages/media/22791_149_iav1_salon_3.jpg.",
           "path": "bloc 1 > image",
           "fix": "Aligner les deux sur le meme visuel principal.",
           "docs": null,
           "value": null,
-          "tool": "structured-data"
-        },
-        {
-          "severity": "info",
-          "id": "jsonld-whitespace",
-          "category": "Syntaxe JSON-LD",
-          "title": "Espaces superflus dans name",
-          "detail": "Espace en debut ou fin de valeur.",
-          "path": "bloc 1 > isPartOf.name",
-          "fix": "Appliquer un trim a la source.",
-          "docs": null,
-          "value": "\"Le Clos des Meulières\"",
           "tool": "structured-data"
         },
         {
@@ -1752,22 +1692,12 @@
           "docs": "https://developers.google.com/search/docs/appearance/structured-data/product",
           "value": null,
           "tool": "structured-data"
-        },
-        {
-          "severity": "info",
-          "id": "jsonld-whitespace",
-          "category": "Syntaxe JSON-LD",
-          "title": "Espaces superflus dans name",
-          "detail": "Espace en debut ou fin de valeur.",
-          "path": "bloc 2 > itemListElement[5].name",
-          "fix": "Appliquer un trim a la source.",
-          "docs": null,
-          "value": "\"Le clos des meulières\"",
-          "tool": "structured-data"
         }
       ],
       "structure": [
         "<Apartment+Product>@id",
+        "<Apartment+Product>additionalProperty<PropertyValue>.name",
+        "<Apartment+Product>additionalProperty<PropertyValue>.value",
         "<Apartment+Product>address<PostalAddress>.addressCountry",
         "<Apartment+Product>address<PostalAddress>.addressLocality",
         "<Apartment+Product>address<PostalAddress>.addressRegion",
@@ -1850,7 +1780,7 @@
     "sitemap": {
       "total": [
         2538,
-        2589
+        2562
       ],
       "programmes": [
         171,
@@ -1858,7 +1788,7 @@
       ],
       "lots": [
         1785,
-        1846
+        1819
       ]
     },
     "pages": [
@@ -1918,20 +1848,54 @@
       },
       {
         "slot": "programme-aleatoire",
-        "samePage": true,
+        "samePage": false,
+        "previousUrl": "https://www.kaufmanbroad.fr/achat-immobilier-neuf/ile-de-france/seine-et-marne/moussy-le-vieux/programme/22181",
         "scoreBefore": 57,
-        "scoreAfter": 57,
+        "scoreAfter": 59,
         "issues": {
           "added": [],
-          "resolved": []
-        },
-        "structure": {
-          "added": [],
-          "removed": []
-        },
-        "headShape": {
-          "added": [],
-          "removed": []
+          "resolved": [
+            {
+              "severity": "info",
+              "id": "jsonld-whitespace",
+              "title": "Espaces superflus dans description",
+              "path": "bloc 1 > description",
+              "value": "\"Découvrez à Moussy le Vieux, charmante commune de Seine-et-Marne, une résidence à taille humaine dans un cadre de vie bucolique. Grâce à son…\"",
+              "fix": "Appliquer un trim a la source."
+            },
+            {
+              "severity": "info",
+              "id": "geo-precision-latitude",
+              "title": "Precision excessive sur latitude",
+              "path": "bloc 1 > geo > latitude",
+              "value": "49.04515584267932",
+              "fix": "Arrondir a 6 decimales."
+            },
+            {
+              "severity": "info",
+              "id": "geo-precision-longitude",
+              "title": "Precision excessive sur longitude",
+              "path": "bloc 1 > geo > longitude",
+              "value": "2.630469759572514",
+              "fix": "Arrondir a 6 decimales."
+            },
+            {
+              "severity": "info",
+              "id": "jsonld-whitespace",
+              "title": "Espaces superflus dans name",
+              "path": "bloc 1 > name",
+              "value": "\"L'Orée du Puits\"",
+              "fix": "Appliquer un trim a la source."
+            },
+            {
+              "severity": "info",
+              "id": "jsonld-whitespace",
+              "title": "Espaces superflus dans name",
+              "path": "bloc 2 > itemListElement[5].name",
+              "value": "\"L'orée du puits\"",
+              "fix": "Appliquer un trim a la source."
+            }
+          ]
         }
       },
       {
@@ -1943,11 +1907,19 @@
         "issues": {
           "added": [
             {
+              "severity": "warning",
+              "id": "meta-title-length",
+              "title": "Longueur du title : 74 caracteres",
+              "path": null,
+              "value": "Achat appartement neuf 2 pièces - les terrasses du 105 - Ozoir-la-ferrière",
+              "fix": "Ajuster la longueur du title."
+            },
+            {
               "severity": "info",
               "id": "geo-precision-latitude",
               "title": "Precision excessive sur latitude",
               "path": "bloc 1 > geo > latitude",
-              "value": "48.7333667458601",
+              "value": "48.76358321353139",
               "fix": "Arrondir a 6 decimales."
             },
             {
@@ -1955,24 +1927,8 @@
               "id": "geo-precision-longitude",
               "title": "Precision excessive sur longitude",
               "path": "bloc 1 > geo > longitude",
-              "value": "2.174581039451587",
+              "value": "2.663805040398668",
               "fix": "Arrondir a 6 decimales."
-            },
-            {
-              "severity": "info",
-              "id": "jsonld-whitespace",
-              "title": "Espaces superflus dans name",
-              "path": "bloc 1 > isPartOf.name",
-              "value": "\"Le Clos des Meulières\"",
-              "fix": "Appliquer un trim a la source."
-            },
-            {
-              "severity": "info",
-              "id": "jsonld-whitespace",
-              "title": "Espaces superflus dans name",
-              "path": "bloc 2 > itemListElement[5].name",
-              "value": "\"Le clos des meulières\"",
-              "fix": "Appliquer un trim a la source."
             }
           ],
           "resolved": [
