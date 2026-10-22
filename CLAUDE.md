@@ -165,6 +165,18 @@ le sitemap (constats `site-`), puis compare au rapport precedent de `reports/` :
   `fetch-page.js` envoie `X-Audit-Token: $AUDIT_TOKEN` aux seuls hotes `*.kaufmanbroad.fr`, et suit les
   redirections a la main pour ne jamais transmettre le jeton a un autre domaine.
 
+- le tirage au hasard est restreint aux programmes diffuses de l'export marketing `programs.csv`
+  (`PROGRAMS_CSV_URL`, SAS lecture seule) : `isProgramPublishedB2C = 1`, `statutBackbone != archive`,
+  sans `parentOperationCode` (un programme enfant doit repondre 301 vers son parent). Un lot est
+  rattache a son programme par le prefixe de son identifiant (`28071_58` -> `28071`). CSV illisible =
+  constat `site-programs-csv-unreachable` et tirage sur tout le sitemap. Ne jamais journaliser cette URL.
+- en local derriere le proxy de l'entreprise, `fetch` vers Azure Blob echoue en
+  `SELF_SIGNED_CERT_IN_CHAIN` : lancer Node avec `--use-system-ca`.
+
+Variables de l'environnement cloud (jamais dans le depot) : `AUDIT_TOKEN`, `PROGRAMS_CSV_URL`,
+`REPORT_TO` (facultatif). Domaines autorises : `www.kaufmanbroad.fr`, `outilsmarketing.blob.core.windows.net`.
+Documentation complete pour l'exploitation : section « Audit automatique » du `README.md`.
+
 `scripts/build-email.mjs` met en forme le mail (HTML + CSV versionne et lie depuis le mail) sans l'envoyer :
 l'envoi est fait par la routine via le connecteur Gmail. La synthese redigee par Claude est lue dans `reports/AAAA-MM-JJ.synthese.md`.
 Le deroulement de la routine est decrit dans `ROUTINE.md` ; les rapports JSON sont commites pour
