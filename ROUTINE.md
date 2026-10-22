@@ -18,8 +18,7 @@ Suis exactement les instructions de ROUTINE.md (section « Deroulement ») pour 
 - Variable d'environnement `PROGRAMS_CSV_URL` : URL SAS en lecture seule de l'export marketing
   `programs.csv` (domaine `outilsmarketing.blob.core.windows.net` a autoriser). Le tirage au hasard ne porte
   que sur les programmes diffuses (publies B2C, actifs, sans parent). Jamais dans le depot ni dans le mail.
-- Variable d'environnement `BREVO_API_KEY` : cle d'API Brevo utilisee par `npm run send`. Jamais dans le depot
-  ni dans la sortie de la session. Domaine `api.brevo.com` a autoriser dans l'acces reseau.
+- Connecteur **Gmail** active sur la routine (envoi depuis le compte de l'utilisateur).
 - Droit de pousser sur la branche `main` du depot (les rapports servent de reference au lendemain).
 
 ## Deroulement
@@ -27,7 +26,7 @@ Suis exactement les instructions de ROUTINE.md (section « Deroulement ») pour 
 1. Lancer `npm run audit`. Il ecrit `reports/AAAA-MM-JJ.json` (date de Paris) et affiche un resume.
    - S'il echoue (code de sortie non nul) : lancer
      `npm run email -- --failure "<les 40 dernieres lignes de la sortie d'erreur>"`, envoyer le mail
-     comme a l'etape 5 (sans `--text`), puis s'arreter.
+     comme a l'etape 5, puis s'arreter.
 
 2. Lire le rapport du jour : `alerts`, `diff`, `site`, et pour chaque page `score`, `counts`, `issues`.
    - Si le rapport contient `incomplete`, les pages de `incomplete.blockedSlots` ont recu une page de
@@ -52,9 +51,10 @@ Suis exactement les instructions de ROUTINE.md (section « Deroulement ») pour 
    `reports/AAAA-MM-JJ.synthese.md` (message : `audit: rapport du AAAA-MM-JJ`) et pousser sur `main`.
    Le mail contient des liens vers ces fichiers sur GitHub : le push doit preceder l'envoi.
    Ne modifier aucun autre fichier du depot. Si le push echoue, envoyer quand meme le mail et
-   l'indiquer en tete de la version texte (les liens CSV / JSON du mail seront alors en 404).
+   l'indiquer en tete du `body` texte (les liens CSV / JSON du mail seront alors en 404).
 
-5. Envoyer le mail via Brevo : `npm run send -- --text "<version texte courte : verdict de la synthese + lien vers le CSV>"`.
-   Le script lit `reports/AAAA-MM-JJ.email.json` et envoie le HTML tel quel ; il reessaie deja une fois
-   sur erreur reseau ou 5xx. N'utiliser aucun autre moyen d'envoi (pas de connecteur Gmail).
-   Si le script echoue, recopier son message d'erreur dans la sortie de la session.
+5. Envoyer le mail avec l'outil Gmail `send_message` :
+   - `to` et `subject` : ceux de `reports/AAAA-MM-JJ.email.json` ;
+   - `htmlBody` : le contenu **integral et inchange** du fichier `htmlFile` ;
+   - `body` : une version texte courte (verdict de la synthese + lien vers le CSV).
+   En cas d'echec, reessayer une fois ; si l'echec persiste, le dire dans la sortie de la session.

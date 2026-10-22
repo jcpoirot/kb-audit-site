@@ -131,7 +131,7 @@ scripts/
   build-vocabulary.mjs    régénère l'index                          (npm run vocab)
   audit-site.mjs          audit multi-pages + site + comparaison    (npm run audit)
   build-email.mjs         mail de synthèse HTML + CSV, sans envoi   (npm run email)
-  send-email.mjs          envoi du mail préparé via l'API Brevo    (npm run send)
+  send-email.mjs          envoi via l'API Brevo, essais locaux       (npm run send)
 audit-config.json         pages, destinataires et liens de l'audit automatique
 ROUTINE.md                consignes suivies par la routine cloud
 reports/                  rapports versionnés (AAAA-MM-JJ.json, .csv, .synthese.md)
@@ -210,7 +210,7 @@ Elle tourne chez Anthropic : le poste peut être éteint.
 | Dépôt | https://github.com/jcpoirot/kb-audit-site, branche `main` |
 | Environnement cloud | « Default » |
 | Modèle | Claude Sonnet 5.5 |
-| Envoi | API Brevo (`npm run send`), expéditeur `email.from` de `audit-config.json` |
+| Envoi | connecteur Gmail, depuis jcpoirot@dimake.io |
 | Destinataires | `email.to` de `audit-config.json` |
 
 ### Déroulement
@@ -224,7 +224,7 @@ Claude          ->  reports/AAAA-MM-JJ.synthese.md (verdict, alertes, changement
 npm run email   ->  reports/AAAA-MM-JJ.csv         (versionné, lié depuis le mail)
                     reports/AAAA-MM-JJ.email.html + .email.json (non versionnés)
 git push        ->  le rapport sert de référence au prochain audit ; les liens du mail fonctionnent
-npm run send    ->  envoi du HTML généré, tel quel, via l'API Brevo
+Gmail           ->  envoi du HTML généré, tel quel
 ```
 
 Si `npm run audit` échoue, la routine envoie un mail « ÉCHEC » : l'absence de mail n'est jamais un
@@ -276,8 +276,8 @@ sitemap et le rapport le signale (`site-programs-csv-unreachable`).
 | `randomPages` | tirages au hasard (`slot`, `label`, `pattern` cherché dans les URL du sitemap) |
 | `sitemapSampleSize` | nombre d'URL du sitemap vérifiées à chaque audit |
 | `sitemapDropAlertPercent` | seuil d'alerte sur la baisse du sitemap |
-| `email.from` | expéditeur (`email`, `name`) — doit être un expéditeur validé dans Brevo |
-| `email.replyTo` | facultatif : adresse qui reçoit les réponses au mail |
+| `email.from` | envoi Brevo uniquement : expéditeur (`email`, `name`), validé dans Brevo |
+| `email.replyTo` | envoi Brevo uniquement, facultatif : adresse qui reçoit les réponses |
 | `email.to` | destinataires |
 | `reportsUrl` | base des liens vers les rapports sur GitHub |
 | `routineUrl` | lien « Modifier la routine » en pied de mail |
@@ -290,7 +290,6 @@ Les secrets se déclarent sur claude.ai/code, dans les paramètres de l'environn
 | --- | --- |
 | `AUDIT_TOKEN` | jeton envoyé dans l'en-tête `X-Audit-Token`, qui exempte l'audit de la règle anti-robots du WAF (voir ci-dessous). Envoyé aux seuls hôtes `*.kaufmanbroad.fr` ; les redirections sont suivies à la main pour qu'il ne parte jamais vers un autre domaine. |
 | `PROGRAMS_CSV_URL` | URL SAS **en lecture seule**, limitée au fichier `programs.csv` du compte de stockage `outilsmarketing`. Jamais écrite dans les rapports ni dans le mail. |
-| `BREVO_API_KEY` | clé d'API Brevo (Paramètres > SMTP & API > Clés API), utilisée par `npm run send` |
 | `REPORT_TO` | facultatif : remplace les destinataires de `audit-config.json` |
 
 Le rapport indique si le jeton a été envoyé (`tokenSent`) et quelle liste de programmes a été utilisée
@@ -301,9 +300,9 @@ Le rapport indique si le jeton a été envoyé (`tokenSent`) et quelle liste de 
 | Réglage | Valeur |
 | --- | --- |
 | Accès réseau | « Personnalisé », liste par défaut des gestionnaires de paquets incluse |
-| Domaines autorisés | `www.kaufmanbroad.fr` (le nom exact compte : `kaufmanbroad.fr` ne couvre pas `www.`), `outilsmarketing.blob.core.windows.net`, `api.brevo.com` |
+| Domaines autorisés | `www.kaufmanbroad.fr` (le nom exact compte : `kaufmanbroad.fr` ne couvre pas `www.`), `outilsmarketing.blob.core.windows.net` |
 | GitHub | application Claude installée sur le dépôt, avec droit d'écriture (push des rapports) |
-| Connecteur | aucun (l'envoi passe par Brevo) |
+| Connecteur | Gmail, attaché à la routine |
 
 ### Règle WAF côté site
 
@@ -347,6 +346,10 @@ node --env-file=.env --use-system-ca scripts/audit-site.mjs
 node --env-file=.env scripts/build-email.mjs
 node --env-file=.env --use-system-ca scripts/send-email.mjs --text "Test"
 ```
+
+La dernière commande envoie le mail via Brevo (`BREVO_API_KEY` dans `.env`). Elle n'est pas utilisée par la
+routine : Brevo filtre les IP appelantes, et les sessions cloud n'ont pas d'IP de sortie fixe (refus `401
+unrecognised IP address` constaté le 2026-10-22).
 
 `npm test` enchaîne ces trois commandes. Il réécrit le rapport du jour dans `reports/` : ne pas le commiter
 (`git checkout -- reports` pour revenir à la version du dépôt).

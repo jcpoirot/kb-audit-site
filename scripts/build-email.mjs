@@ -1,8 +1,9 @@
 /**
  * Preparation du mail de synthese de l'audit quotidien.
  *
- * Le script n'envoie rien : l'envoi est fait par scripts/send-email.mjs (npm run send, API Brevo),
- * a partir des fichiers produits ici.
+ * Le script n'envoie rien : l'envoi est fait par la routine Claude via le connecteur Gmail
+ * (compte de l'utilisateur), a partir des fichiers produits ici. scripts/send-email.mjs (Brevo)
+ * sert aux essais locaux : depuis la routine, Brevo refuse l'IP de sortie du cloud.
  *
  * Usage :
  *   npm run email                                rapport du jour (reports/AAAA-MM-JJ.json)
