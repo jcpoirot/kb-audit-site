@@ -34,6 +34,13 @@
   "sitemapSampleSize": 10,
   "sitemapDropAlertPercent": 10,
   "email": {
+    "from": {
+      "email": "infos@kaufmanbroad.fr",
+      "name": "Audit SEO kaufmanbroad.fr"
+    },
+    "replyTo": {
+      "email": "jcpoirot.consultant-externe@ketb.com"
+    },
     "to": [
       {
         "email": "jcpoirot@dimake.io"

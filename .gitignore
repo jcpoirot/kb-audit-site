@@ -5,3 +5,5 @@ reports/*.email.html
 reports/*.email.json
 # Exports de conteneur GTM : configuration interne, hors depot
 GTM/
+# Secrets locaux (voir .env.example)
+.env

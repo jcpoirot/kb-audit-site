@@ -131,6 +131,7 @@ scripts/
   build-vocabulary.mjs    régénère l'index                          (npm run vocab)
   audit-site.mjs          audit multi-pages + site + comparaison    (npm run audit)
   build-email.mjs         mail de synthèse HTML + CSV, sans envoi   (npm run email)
+  send-email.mjs          envoi du mail préparé via l'API Brevo    (npm run send)
 audit-config.json         pages, destinataires et liens de l'audit automatique
 ROUTINE.md                consignes suivies par la routine cloud
 reports/                  rapports versionnés (AAAA-MM-JJ.json, .csv, .synthese.md)
@@ -209,7 +210,7 @@ Elle tourne chez Anthropic : le poste peut être éteint.
 | Dépôt | https://github.com/jcpoirot/kb-audit-site, branche `main` |
 | Environnement cloud | « Default » |
 | Modèle | Claude Sonnet 5.5 |
-| Envoi | connecteur Gmail, depuis jcpoirot@dimake.io |
+| Envoi | API Brevo (`npm run send`), expéditeur `email.from` de `audit-config.json` |
 | Destinataires | `email.to` de `audit-config.json` |
 
 ### Déroulement
@@ -223,7 +224,7 @@ Claude          ->  reports/AAAA-MM-JJ.synthese.md (verdict, alertes, changement
 npm run email   ->  reports/AAAA-MM-JJ.csv         (versionné, lié depuis le mail)
                     reports/AAAA-MM-JJ.email.html + .email.json (non versionnés)
 git push        ->  le rapport sert de référence au prochain audit ; les liens du mail fonctionnent
-Gmail           ->  envoi du HTML généré, tel quel
+npm run send    ->  envoi du HTML généré, tel quel, via l'API Brevo
 ```
 
 Si `npm run audit` échoue, la routine envoie un mail « ÉCHEC » : l'absence de mail n'est jamais un
@@ -275,6 +276,8 @@ sitemap et le rapport le signale (`site-programs-csv-unreachable`).
 | `randomPages` | tirages au hasard (`slot`, `label`, `pattern` cherché dans les URL du sitemap) |
 | `sitemapSampleSize` | nombre d'URL du sitemap vérifiées à chaque audit |
 | `sitemapDropAlertPercent` | seuil d'alerte sur la baisse du sitemap |
+| `email.from` | expéditeur (`email`, `name`) — doit être un expéditeur validé dans Brevo |
+| `email.replyTo` | facultatif : adresse qui reçoit les réponses au mail |
 | `email.to` | destinataires |
 | `reportsUrl` | base des liens vers les rapports sur GitHub |
 | `routineUrl` | lien « Modifier la routine » en pied de mail |
@@ -287,6 +290,7 @@ Les secrets se déclarent sur claude.ai/code, dans les paramètres de l'environn
 | --- | --- |
 | `AUDIT_TOKEN` | jeton envoyé dans l'en-tête `X-Audit-Token`, qui exempte l'audit de la règle anti-robots du WAF (voir ci-dessous). Envoyé aux seuls hôtes `*.kaufmanbroad.fr` ; les redirections sont suivies à la main pour qu'il ne parte jamais vers un autre domaine. |
 | `PROGRAMS_CSV_URL` | URL SAS **en lecture seule**, limitée au fichier `programs.csv` du compte de stockage `outilsmarketing`. Jamais écrite dans les rapports ni dans le mail. |
+| `BREVO_API_KEY` | clé d'API Brevo (Paramètres > SMTP & API > Clés API), utilisée par `npm run send` |
 | `REPORT_TO` | facultatif : remplace les destinataires de `audit-config.json` |
 
 Le rapport indique si le jeton a été envoyé (`tokenSent`) et quelle liste de programmes a été utilisée
@@ -297,9 +301,9 @@ Le rapport indique si le jeton a été envoyé (`tokenSent`) et quelle liste de 
 | Réglage | Valeur |
 | --- | --- |
 | Accès réseau | « Personnalisé », liste par défaut des gestionnaires de paquets incluse |
-| Domaines autorisés | `www.kaufmanbroad.fr` (le nom exact compte : `kaufmanbroad.fr` ne couvre pas `www.`), `outilsmarketing.blob.core.windows.net` |
+| Domaines autorisés | `www.kaufmanbroad.fr` (le nom exact compte : `kaufmanbroad.fr` ne couvre pas `www.`), `outilsmarketing.blob.core.windows.net`, `api.brevo.com` |
 | GitHub | application Claude installée sur le dépôt, avec droit d'écriture (push des rapports) |
-| Connecteur | Gmail, attaché à la routine |
+| Connecteur | aucun (l'envoi passe par Brevo) |
 
 ### Règle WAF côté site
 
@@ -330,11 +334,22 @@ puis la reporter à l'identique dans la règle WAF et dans `AUDIT_TOKEN`.
 | Changer jours ou heure | page de la routine (cron en UTC) |
 | Changer les destinataires ou les pages témoins | `audit-config.json`, puis push |
 | Changer le contenu de la synthèse | `ROUTINE.md`, puis push |
-| Tester sans déranger les destinataires | réduire temporairement `email.to`, pousser, lancer la routine, puis rétablir |
+| Tester sans déranger les destinataires | définir temporairement `REPORT_TO` dans l'environnement cloud, lancer la routine, puis le supprimer |
 
 En local, `npm run audit` puis `npm run email` produisent le rapport et l'aperçu du mail
 (`reports/AAAA-MM-JJ.email.html`) sans rien envoyer. Sur le réseau de l'entreprise, ajouter
 `--use-system-ca` à Node pour lire le CSV Azure (le proxy intercepte le TLS).
+
+Les secrets locaux se placent dans un fichier `.env` non versionné (modèle : `.env.example`), chargé par Node :
+
+```
+node --env-file=.env --use-system-ca scripts/audit-site.mjs
+node --env-file=.env scripts/build-email.mjs
+node --env-file=.env --use-system-ca scripts/send-email.mjs --text "Test"
+```
+
+`npm test` enchaîne ces trois commandes. Il réécrit le rapport du jour dans `reports/` : ne pas le commiter
+(`git checkout -- reports` pour revenir à la version du dépôt).
 
 ### Dépannage de la routine
 

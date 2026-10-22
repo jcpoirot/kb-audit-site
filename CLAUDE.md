@@ -10,6 +10,8 @@ PORT=5000 npm start      # autre port
 npm run vocab            # regenere data/schema-index.json depuis le JSON-LD schema.org
 npm run audit            # audit quotidien multi-pages -> reports/AAAA-MM-JJ.json (+ diff avec la veille)
 npm run email            # prepare le mail (reports/AAAA-MM-JJ.email.html + .email.json + .csv), sans l'envoyer
+npm run send             # envoie le mail prepare via l'API Brevo (BREVO_API_KEY)
+npm test                 # local : audit + mail + envoi avec les variables de .env (REPORT_TO conseille)
 ```
 
 Il n'y a **ni suite de tests, ni linter, ni etape de build**. La verification se fait ainsi :
@@ -174,11 +176,11 @@ le sitemap (constats `site-`), puis compare au rapport precedent de `reports/` :
   `SELF_SIGNED_CERT_IN_CHAIN` : lancer Node avec `--use-system-ca`.
 
 Variables de l'environnement cloud (jamais dans le depot) : `AUDIT_TOKEN`, `PROGRAMS_CSV_URL`,
-`REPORT_TO` (facultatif). Domaines autorises : `www.kaufmanbroad.fr`, `outilsmarketing.blob.core.windows.net`.
+`BREVO_API_KEY`, `REPORT_TO` (facultatif). Domaines autorises : `www.kaufmanbroad.fr`, `outilsmarketing.blob.core.windows.net`, `api.brevo.com`.
 Documentation complete pour l'exploitation : section « Audit automatique » du `README.md`.
 
 `scripts/build-email.mjs` met en forme le mail (HTML + CSV versionne et lie depuis le mail) sans l'envoyer :
-l'envoi est fait par la routine via le connecteur Gmail. La synthese redigee par Claude est lue dans `reports/AAAA-MM-JJ.synthese.md`.
+l'envoi est fait par `scripts/send-email.mjs` (API Brevo, cle `BREVO_API_KEY`, expediteur `email.from`). La synthese redigee par Claude est lue dans `reports/AAAA-MM-JJ.synthese.md`.
 Le deroulement de la routine est decrit dans `ROUTINE.md` ; les rapports JSON sont commites pour
 servir de reference au lendemain.
 

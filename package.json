@@ -8,7 +8,9 @@
     "start": "node server.js",
     "vocab": "node scripts/build-vocabulary.mjs",
     "audit": "node scripts/audit-site.mjs",
-    "email": "node scripts/build-email.mjs"
+    "email": "node scripts/build-email.mjs",
+    "send": "node scripts/send-email.mjs",
+    "test": "node --env-file=.env --use-system-ca scripts/audit-site.mjs && node --env-file=.env scripts/build-email.mjs && node --env-file=.env --use-system-ca scripts/send-email.mjs --text \"Test local d'envoi Brevo\""
   },
   "engines": {
     "node": ">=20"
