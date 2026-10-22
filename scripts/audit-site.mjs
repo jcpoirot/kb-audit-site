@@ -403,11 +403,30 @@ function diffList(current, previous) {
   return { added: current.filter((x) => !before.has(x)), removed: previous.filter((x) => !after.has(x)) };
 }
 
+/**
+ * Score global : moyenne des pages lisibles (non bloquees), le score site comptant comme une page.
+ * @param {Set<string>} [slots] restreint le calcul a ces emplacements
+ */
+function globalScore(report, slots) {
+  const scores = report.pages.filter((p) => !p.blocked && (!slots || slots.has(p.slot))).map((p) => p.score);
+  scores.push(report.site.score);
+  return Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+}
+
+/** Emplacements lisibles dans les deux rapports. */
+function comparableSlots(current, previous) {
+  const ok = (r) => new Set(r.pages.filter((p) => !p.blocked).map((p) => p.slot));
+  const before = ok(previous);
+  return new Set([...ok(current)].filter((s) => before.has(s)));
+}
+
 function buildDiff(current, previous) {
   if (!previous) return null;
   const pages = current.pages.map((page) => {
     const prev = previous.pages.find((p) => p.slot === page.slot);
     if (!prev) return { slot: page.slot, isNew: true };
+    // Une page bloquee (WAF) d'un cote ou de l'autre ne decrit pas le site : pas de comparaison.
+    if (page.blocked || prev.blocked) return { slot: page.slot, skipped: true, blockedNow: !!page.blocked };
     const samePage = normalizeUrl(prev.url) === normalizeUrl(page.url);
     const entry = {
       slot: page.slot,
@@ -426,8 +445,9 @@ function buildDiff(current, previous) {
   });
   return {
     previousDate: previous.date,
-    scoreBefore: previous.score,
-    scoreAfter: current.score,
+    // Scores recalcules sur les seules pages lisibles des deux cotes, pour une tendance honnete.
+    scoreBefore: globalScore(previous, comparableSlots(current, previous)),
+    scoreAfter: globalScore(current, comparableSlots(current, previous)),
     site: diffIssues(current.site.issues, previous.site.issues),
     sitemap: previous.site.sitemap && current.site.sitemap
       ? {
@@ -459,6 +479,11 @@ function buildAlerts(report) {
     if (i.severity === 'error') alerts.push({ scope: 'site', id: i.id, title: i.title, value: i.value });
   }
   for (const page of report.pages) {
+    if (page.blocked) {
+      // Une seule alerte : les constats de la page decrivent la page de blocage, pas le site.
+      alerts.push({ scope: page.slot, id: 'page-blocked', title: 'Page non analysee : reponse de blocage du WAF', value: page.responseSample ?? null });
+      continue;
+    }
     const pageDiff = report.diff?.pages.find((p) => p.slot === page.slot);
     const newKeys = pageDiff?.issues ? new Set(pageDiff.issues.added.map(issueKey)) : null;
     for (const i of page.issues) {
@@ -558,17 +583,19 @@ async function main() {
     score: scoreOf(siteIssues),
     sitemap: stats,
   };
-  const pageScores = pages.map((p) => p.score);
   const report = {
     date,
     generatedAt: new Date().toISOString(),
     elapsedMs: Date.now() - started,
     config: { site: config.site, sitemap: config.sitemap },
-    // Score global : moyenne des pages, le score site comptant comme une page.
-    score: Math.round([...pageScores, site.score].reduce((a, b) => a + b, 0) / (pageScores.length + 1)),
+    tokenSent: Boolean(process.env.AUDIT_TOKEN?.trim()),
     site,
     pages,
   };
+  report.score = globalScore(report);
+  // Pages bloquees : exclues du score et des comparaisons, signalees dans le mail.
+  const blockedSlots = pages.filter((p) => p.blocked).map((p) => p.slot);
+  if (blockedSlots.length) report.incomplete = { blockedSlots };
   // Si aucune page n'a pu etre lue normalement, l'audit ne dit rien du site : on le marque
   // comme bloque plutot que de produire des dizaines de faux defauts et une fausse tendance.
   if (pages.length && pages.every((p) => p.blocked || p.error)) {

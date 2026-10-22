@@ -13,6 +13,8 @@ Suis exactement les instructions de ROUTINE.md (section « Deroulement ») pour 
 
 - Node 20+ (aucune dependance npm a installer).
 - Acces reseau autorise vers `www.kaufmanbroad.fr`.
+- Variable d'environnement `AUDIT_TOKEN` : jeton envoye dans l'en-tete `X-Audit-Token`, qui exempte l'audit
+  de la regle anti-robots du WAF Azure Front Door (regle personnalisee `AllowSeoAudit`). Jamais dans le depot.
 - Connecteur **Gmail** active sur la routine (envoi depuis le compte de l'utilisateur).
 - Droit de pousser sur la branche `main` du depot (les rapports servent de reference au lendemain).
 
@@ -24,6 +26,9 @@ Suis exactement les instructions de ROUTINE.md (section « Deroulement ») pour 
      comme a l'etape 5, puis s'arreter.
 
 2. Lire le rapport du jour : `alerts`, `diff`, `site`, et pour chaque page `score`, `counts`, `issues`.
+   - Si le rapport contient `incomplete`, les pages de `incomplete.blockedSlots` ont recu une page de
+     blocage du WAF : elles sont exclues du score et des comparaisons. Le dire dans le verdict, sans
+     commenter leurs constats ; si `tokenSent` vaut false, preciser que `AUDIT_TOKEN` n'est pas defini.
    - Si le rapport contient `blocked` (aucune page lisible : proxy sortant ou WAF), ne pas ecrire
      de synthese : passer directement a l'etape 4, le mail genere explique deja le blocage.
 

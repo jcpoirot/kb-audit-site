@@ -143,9 +143,23 @@ function buildHtml(report, synthese, options = {}) {
   // Synthese redigee
   if (synthese) parts.push(section('Synthese', markdownToHtml(synthese)));
 
+  if (report.incomplete) {
+    const names = report.incomplete.blockedSlots.map((s) => SLOT_LABELS[s] ?? s).join(', ');
+    parts.push(`<div style="margin:0 0 18px;padding:10px 16px;background:#fff3e0;border-left:4px solid ${COLORS.warning}">
+      <strong>Audit incomplet</strong> : ${esc(names)} ${report.incomplete.blockedSlots.length > 1 ? 'ont' : 'a'} recu une page de blocage du WAF.
+      ${report.incomplete.blockedSlots.length > 1 ? 'Ces pages sont exclues' : 'Cette page est exclue'} du score et des comparaisons.</div>`);
+  }
+
   // Pages
   const rows = report.pages.map((p) => {
     const d = diff?.pages.find((x) => x.slot === p.slot);
+    if (p.blocked) {
+      return `<tr>
+      <td style="padding:6px 8px;border-bottom:1px solid ${COLORS.line}"><strong>${esc(SLOT_LABELS[p.slot] ?? p.slot)}</strong><br>
+        <a href="${esc(p.url)}" style="color:${COLORS.info};font-size:12px;word-break:break-all">${esc(p.url.replace(/^https?:\/\/[^/]+/, '') || '/')}</a></td>
+      <td colspan="4" style="padding:6px 8px;border-bottom:1px solid ${COLORS.line};text-align:center;color:${COLORS.warning}">bloquee par le WAF - non analysee</td>
+    </tr>`;
+    }
     return `<tr>
       <td style="padding:6px 8px;border-bottom:1px solid ${COLORS.line}"><strong>${esc(SLOT_LABELS[p.slot] ?? p.slot)}</strong><br>
         <a href="${esc(p.url)}" style="color:${COLORS.info};font-size:12px;word-break:break-all">${esc(p.url.replace(/^https?:\/\/[^/]+/, '') || '/')}</a></td>
@@ -171,7 +185,7 @@ function buildHtml(report, synthese, options = {}) {
   if (diff) {
     const blocks = [];
     for (const d of diff.pages) {
-      if (d.isNew || !d.issues) continue;
+      if (d.isNew || d.skipped || !d.issues) continue;
       const items = [
         ...d.issues.added.filter((i) => i.severity !== 'info').map((i) => issueLine(i, '<span style="color:#c62828">nouveau</span> ')),
         ...d.issues.resolved.filter((i) => i.severity !== 'info').map((i) => issueLine(i, '<span style="color:#2e7d32">resolu</span> ')),
@@ -215,7 +229,7 @@ function buildHtml(report, synthese, options = {}) {
   // Les nombres du titre sont neutralises (« Longueur du title : 66 / 71 caracteres » = un seul defaut),
   // mais un meme id peut porter des titres differents selon le gabarit (kb-main-entity-missing).
   const byId = new Map();
-  for (const p of report.pages) {
+  for (const p of report.pages.filter((x) => !x.blocked)) {
     for (const i of p.issues) {
       if (i.severity === 'info') continue;
       const key = `${i.id}|${i.title.replace(/\d+/g, '#')}`;

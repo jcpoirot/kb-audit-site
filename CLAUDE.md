@@ -160,6 +160,10 @@ le sitemap (constats `site-`), puis compare au rapport precedent de `reports/` :
 - la structure JSON-LD (chemins types sans valeurs) et la forme du head ne sont comparees que si
   l'URL est la meme que la veille (`samePage`) : deux lots differents n'ont pas les memes champs ;
 - `alerts` = erreurs de site + defauts critiques nouveaux + changements de structure.
+- une page qui recoit une page de blocage (`http-blocked`, ex. JSChallenge du WAF Azure Front Door) est
+  marquee `blocked` : exclue du score global, des comparaisons et des alertes (une seule alerte `page-blocked`).
+  `fetch-page.js` envoie `X-Audit-Token: $AUDIT_TOKEN` aux seuls hotes `*.kaufmanbroad.fr`, et suit les
+  redirections a la main pour ne jamais transmettre le jeton a un autre domaine.
 
 `scripts/build-email.mjs` met en forme le mail (HTML + CSV versionne et lie depuis le mail) sans l'envoyer :
 l'envoi est fait par la routine via le connecteur Gmail. La synthese redigee par Claude est lue dans `reports/AAAA-MM-JJ.synthese.md`.

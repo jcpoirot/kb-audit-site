@@ -29,6 +29,8 @@ const BLOCK_MARKERS = [
   /The request is blocked\./i,
   /captcha-delivery|geo\.captcha/i,
   /Our services aren't available right now/i,
+  // Azure Front Door : JSChallenge du Bot Manager (Microsoft_BotManagerRuleSet, 403 + page "Azure WAF")
+  /Azure WAF/i,
 ];
 
 export function looksBlocked(html, status) {
