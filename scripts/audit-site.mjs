@@ -280,6 +280,85 @@ async function checkSitemap(config, previous, issues) {
 }
 
 // ---------------------------------------------------------------------------
+// Programmes diffuses (export marketing programs.csv)
+// ---------------------------------------------------------------------------
+
+/** CSV separe par des points-virgules, champs entre guillemets pouvant contenir ; et retours a la ligne. */
+function parseCsv(text) {
+  const rows = [];
+  let row = [];
+  let cell = '';
+  let quoted = false;
+  const src = text.replace(/^﻿/, '');
+  for (let i = 0; i < src.length; i += 1) {
+    const c = src[i];
+    if (quoted) {
+      if (c === '"' && src[i + 1] === '"') {
+        cell += '"';
+        i += 1;
+      } else if (c === '"') quoted = false;
+      else cell += c;
+    } else if (c === '"') quoted = true;
+    else if (c === ';') {
+      row.push(cell);
+      cell = '';
+    } else if (c === '\n') {
+      row.push(cell.replace(/\r$/, ''));
+      rows.push(row);
+      row = [];
+      cell = '';
+    } else cell += c;
+  }
+  if (cell || row.length) rows.push([...row, cell]);
+  const [header = [], ...data] = rows;
+  return data.filter((r) => r.length > 1).map((r) => Object.fromEntries(header.map((k, i) => [k, r[i] ?? ''])));
+}
+
+/** Identifiant de programme d'une URL : /programme/28071 -> 28071, /lot/Appartement/28071_58 -> 28071. */
+function programIdOf(url) {
+  return /\/programme\/(\d+)/.exec(url)?.[1] ?? /\/lot\/[^/]+\/(\d+)_/.exec(url)?.[1] ?? null;
+}
+
+/**
+ * Programmes diffuses : publies en B2C, actifs, et sans programme parent (un programme enfant
+ * doit rediriger vers son parent, il n'est pas audite). Source : PROGRAMS_CSV_URL (URL SAS
+ * en lecture seule, jamais versionnee ni affichee). Sans source, le tirage porte sur tout le sitemap.
+ */
+async function loadPrograms(issues) {
+  const url = process.env.PROGRAMS_CSV_URL?.trim();
+  if (!url) return null;
+  try {
+    const res = await fetch(url, { signal: AbortSignal.timeout(30000) });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const rows = parseCsv(await res.text());
+    if (!rows.length || !('isProgramPublishedB2C' in rows[0])) throw new Error('colonnes attendues absentes (isProgramPublishedB2C)');
+    const diffused = rows.filter(
+      (p) =>
+        p.isProgramPublishedB2C === '1' &&
+        (p.statutBackbone ?? 'active') !== 'archive' &&
+        (!p.parentOperationCode || p.parentOperationCode === p.idProgram),
+    );
+    return {
+      ids: new Set(diffused.map((p) => p.idProgram)),
+      stats: { total: rows.length, diffused: diffused.length, lastModified: res.headers.get('last-modified') },
+    };
+  } catch (err) {
+    // Le message ne reprend jamais l'URL : elle contient la signature SAS.
+    issues.push(
+      issue({
+        severity: 'warning',
+        id: 'site-programs-csv-unreachable',
+        category: CATEGORY,
+        title: 'Liste des programmes diffuses illisible : tirage au hasard sur tout le sitemap',
+        value: err.name === 'TimeoutError' ? 'delai depasse' : err.message,
+        fix: "Verifier PROGRAMS_CSV_URL (SAS en lecture, non expiree) et l'acces reseau vers outilsmarketing.blob.core.windows.net.",
+      }),
+    );
+    return null;
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Pages
 // ---------------------------------------------------------------------------
 
@@ -528,6 +607,12 @@ function printSummary(report) {
     const s = report.site.sitemap;
     out.push(`Sitemap : ${s.total} URL, ${s.programmes} programmes, ${s.lots} lots`);
   }
+  out.push(
+    report.programs
+      ? `Programmes diffuses (CSV) : ${report.programs.diffused} sur ${report.programs.total}, maj ${report.programs.lastModified ?? '?'}`
+      : 'Programmes diffuses : CSV non charge, tirage sur tout le sitemap',
+  );
+  out.push(`Jeton WAF envoye : ${report.tokenSent ? 'oui' : 'non'}`);
   out.push(`Alertes : ${report.alerts.length}`);
   for (const a of report.alerts) out.push(`  ! [${a.scope}] ${a.title}${a.value ? ` (${a.value})` : ''}`);
   out.push('Site :');
@@ -556,17 +641,21 @@ async function main() {
   const { urls, stats } = await checkSitemap(config, previous, siteIssues);
   const sitemapSet = new Set(urls.map(normalizeUrl));
 
+  const programs = await loadPrograms(siteIssues);
+
   const specs = config.fixedPages.map((p) => ({ ...p, kind: 'fixe' }));
   const fixedSet = new Set(specs.map((p) => normalizeUrl(p.url)));
   for (const rule of config.randomPages) {
-    const candidates = urls.filter((u) => u.includes(rule.pattern) && !fixedSet.has(normalizeUrl(u)));
+    const candidates = urls.filter(
+      (u) => u.includes(rule.pattern) && !fixedSet.has(normalizeUrl(u)) && (!programs || programs.ids.has(programIdOf(u))),
+    );
     if (!candidates.length) {
       siteIssues.push(
         issue({
           severity: 'error',
           id: 'site-no-candidate',
           category: CATEGORY,
-          title: `Aucune URL "${rule.pattern}" dans le sitemap pour le tirage au hasard`,
+          title: `Aucune URL "${rule.pattern}"${programs ? ' de programme diffuse' : ''} dans le sitemap pour le tirage au hasard`,
           value: rule.slot,
         }),
       );
@@ -589,6 +678,8 @@ async function main() {
     elapsedMs: Date.now() - started,
     config: { site: config.site, sitemap: config.sitemap },
     tokenSent: Boolean(process.env.AUDIT_TOKEN?.trim()),
+    // Source du tirage au hasard : programmes diffuses (CSV marketing) ou, a defaut, tout le sitemap.
+    programs: programs?.stats ?? null,
     site,
     pages,
   };

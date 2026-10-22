@@ -15,6 +15,9 @@ Suis exactement les instructions de ROUTINE.md (section « Deroulement ») pour 
 - Acces reseau autorise vers `www.kaufmanbroad.fr`.
 - Variable d'environnement `AUDIT_TOKEN` : jeton envoye dans l'en-tete `X-Audit-Token`, qui exempte l'audit
   de la regle anti-robots du WAF Azure Front Door (regle personnalisee `AllowSeoAudit`). Jamais dans le depot.
+- Variable d'environnement `PROGRAMS_CSV_URL` : URL SAS en lecture seule de l'export marketing
+  `programs.csv` (domaine `outilsmarketing.blob.core.windows.net` a autoriser). Le tirage au hasard ne porte
+  que sur les programmes diffuses (publies B2C, actifs, sans parent). Jamais dans le depot ni dans le mail.
 - Connecteur **Gmail** active sur la routine (envoi depuis le compte de l'utilisateur).
 - Droit de pousser sur la branche `main` du depot (les rapports servent de reference au lendemain).
 
