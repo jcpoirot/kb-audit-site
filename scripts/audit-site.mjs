@@ -404,6 +404,108 @@ function headShapeOf(head) {
   return present.sort();
 }
 
+/** Valeurs `availability` des offres du JSON-LD, sans prefixe (InStock, Reserved...). */
+function availabilityOf(blocks) {
+  const found = new Set();
+  const visit = (value) => {
+    if (Array.isArray(value)) return value.forEach(visit);
+    if (!value || typeof value !== 'object') return;
+    for (const [key, child] of Object.entries(value)) {
+      if (key === 'availability' && typeof child === 'string') found.add(child.replace(/^.*[/:]/, ''));
+      else visit(child);
+    }
+  };
+  for (const block of blocks) {
+    if (block.parseError) continue;
+    try {
+      visit(JSON.parse(block.pretty));
+    } catch {
+      // bloc illisible : deja signale par les controles de syntaxe
+    }
+  }
+  return [...found];
+}
+
+// ---------------------------------------------------------------------------
+// Lot temoin indisponible (reserve, vendu, retire) : remplacement automatique
+// ---------------------------------------------------------------------------
+
+const UNAVAILABLE = new Set(['Reserved', 'SoldOut', 'OutOfStock', 'Discontinued']);
+const MAX_REPLACEMENT_TRIES = 5;
+
+/**
+ * Raison pour laquelle un lot n'est plus commercialise, ou null s'il l'est.
+ * Une page bloquee (WAF) ou injoignable (reseau) ne dit rien du lot : jamais de remplacement.
+ */
+function unavailableReason(page, sitemapSet) {
+  if (page.error || page.blocked) return null;
+  const status = page.fetch?.status;
+  if (status >= 400) return `HTTP ${status}`;
+  if (normalizeUrl(page.url) !== normalizeUrl(page.requestedUrl)) return `redirige vers ${page.url}`;
+  const gone = page.availability?.find((a) => UNAVAILABLE.has(a));
+  if (gone) return `disponibilite ${gone}`;
+  if (sitemapSet.size && !sitemapSet.has(normalizeUrl(page.url))) return 'absent du sitemap';
+  return null;
+}
+
+const lotNumber = (url) => Number(/_(\d+)\/?$/.exec(url)?.[1] ?? Number.MAX_SAFE_INTEGER);
+const lotType = (url) => /\/lot\/([^/]+)\//.exec(url)?.[1] ?? null;
+
+/**
+ * Remplacants possibles, dans l'ordre : celui du rapport precedent (comparaisons stables),
+ * les lots du meme programme et du meme type, les autres lots du programme, puis quelques
+ * lots de programmes diffuses tires au hasard.
+ */
+function replacementCandidates(spec, previous, urls, programs, excluded) {
+  const list = [];
+  const prev = previous?.pages.find((p) => p.slot === spec.slot && p.replacedFrom);
+  if (prev && normalizeUrl(prev.replacedFrom.url) === normalizeUrl(spec.url)) list.push(prev.url);
+
+  const pid = programIdOf(spec.url);
+  const type = lotType(spec.url);
+  const sameProgram = urls
+    .filter((u) => u.includes('/lot/') && programIdOf(u) === pid)
+    // meme type d'abord (Appartement / Maison), puis par numero de lot
+    .sort((a, b) => (lotType(b) === type) - (lotType(a) === type) || lotNumber(a) - lotNumber(b));
+  list.push(...sameProgram);
+  const others = urls.filter((u) => u.includes('/lot/') && programIdOf(u) !== pid && (!programs || programs.ids.has(programIdOf(u))));
+  list.push(...sample(others, MAX_REPLACEMENT_TRIES));
+
+  const seen = new Set(excluded);
+  return list.filter((u) => {
+    const key = normalizeUrl(u);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+/** Audite une page temoin ; si c'est un lot qui n'est plus commercialise, audite un remplacant. */
+async function auditFixedPage(spec, ctx) {
+  const page = await auditPage(spec, ctx.sitemapSet);
+  if (!spec.url.includes('/lot/')) return page;
+  const reason = unavailableReason(page, ctx.sitemapSet);
+  if (!reason) return page;
+
+  const candidates = replacementCandidates(spec, ctx.previous, ctx.urls, ctx.programs, [...ctx.taken, normalizeUrl(spec.url)]);
+  for (const url of candidates.slice(0, MAX_REPLACEMENT_TRIES)) {
+    const candidate = await auditPage({ ...spec, url }, ctx.sitemapSet);
+    if (candidate.error || candidate.blocked || unavailableReason(candidate, ctx.sitemapSet)) continue;
+    return { ...candidate, replacedFrom: { url: spec.url, reason } };
+  }
+  ctx.siteIssues.push(
+    issue({
+      severity: 'warning',
+      id: 'site-fixed-lot-unavailable',
+      category: CATEGORY,
+      title: 'Lot temoin indisponible et aucun remplacant trouve',
+      value: `${spec.url} (${reason})`,
+      fix: 'Choisir un lot commercialise pour ce temoin dans audit-config.json.',
+    }),
+  );
+  return page;
+}
+
 async function auditPage(spec, sitemapSet) {
   const base = { slot: spec.slot, label: spec.label, kind: spec.kind, requestedUrl: spec.url };
   let report;
@@ -449,6 +551,7 @@ async function auditPage(spec, sitemapSet) {
     url: report.url,
     template: template?.key ?? null,
     mainType: template?.mainType ?? null,
+    availability: availabilityOf(report.blocks),
     fetch: report.fetch,
     score: report.score,
     counts: countBySeverity(issues),
@@ -620,6 +723,7 @@ function printSummary(report) {
   for (const page of report.pages) {
     const d = report.diff?.pages.find((p) => p.slot === page.slot);
     out.push(`${page.slot} - ${page.score}/100 - ${page.url}`);
+    if (page.replacedFrom) out.push(`  remplace ${page.replacedFrom.url} (${page.replacedFrom.reason})`);
     out.push(`  ${page.counts.error} erreurs, ${page.counts.warning} avertissements, ${page.counts.info} infos`);
     if (d?.issues) {
       for (const i of d.issues.added) out.push(`  + ${i.severity} ${i.id} ${i.title}`);
@@ -643,8 +747,19 @@ async function main() {
 
   const programs = await loadPrograms(siteIssues);
 
-  const specs = config.fixedPages.map((p) => ({ ...p, kind: 'fixe' }));
-  const fixedSet = new Set(specs.map((p) => normalizeUrl(p.url)));
+  // Pages temoins d'abord : un lot temoin indisponible est remplace avant le tirage au hasard,
+  // pour que le remplacant ne soit pas aussi tire comme lot aleatoire.
+  const fixedSpecs = config.fixedPages.map((p) => ({ ...p, kind: 'fixe' }));
+  const fixedSet = new Set(fixedSpecs.map((p) => normalizeUrl(p.url)));
+  const ctx = { sitemapSet, urls, programs, previous, siteIssues, taken: fixedSet };
+  const pages = [];
+  for (const spec of fixedSpecs) {
+    const page = await auditFixedPage(spec, ctx);
+    fixedSet.add(normalizeUrl(page.url));
+    pages.push(page);
+  }
+
+  const specs = [];
   for (const rule of config.randomPages) {
     const candidates = urls.filter(
       (u) => u.includes(rule.pattern) && !fixedSet.has(normalizeUrl(u)) && (!programs || programs.ids.has(programIdOf(u))),
@@ -664,7 +779,6 @@ async function main() {
     specs.push({ ...rule, url: pickRandom(candidates), kind: 'aleatoire' });
   }
 
-  const pages = [];
   for (const spec of specs) pages.push(await auditPage(spec, sitemapSet));
 
   const site = {

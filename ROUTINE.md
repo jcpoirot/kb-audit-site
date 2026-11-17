@@ -32,6 +32,9 @@ Suis exactement les instructions de ROUTINE.md (section « Deroulement ») pour 
    - Si le rapport contient `incomplete`, les pages de `incomplete.blockedSlots` ont recu une page de
      blocage du WAF : elles sont exclues du score et des comparaisons. Le dire dans le verdict, sans
      commenter leurs constats ; si `tokenSent` vaut false, preciser que `AUDIT_TOKEN` n'est pas defini.
+   - Si une page porte `replacedFrom`, le lot temoin configure n'est plus commercialise (raison dans
+     `replacedFrom.reason`) et un autre lot a ete audite a sa place : le mentionner en une ligne dans
+     « Changements », sans presenter les ecarts de cette page comme des regressions.
    - Si le rapport contient `blocked` (aucune page lisible : proxy sortant ou WAF), ne pas ecrire
      de synthese : passer directement a l'etape 4, le mail genere explique deja le blocage.
 

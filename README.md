@@ -236,9 +236,23 @@ signe que tout va bien.
 | --- | --- |
 | `home` | page d'accueil |
 | `programme-temoin` | programme fixe (Orly, 28071) — sert à mesurer l'évolution d'un audit à l'autre |
-| `lot-temoin` | lot fixe (Orly, 28071_58) |
+| `lot-temoin` | lot fixe (Orly, 28071_58), remplacé automatiquement s'il n'est plus commercialisé |
 | `programme-aleatoire` | programme tiré au hasard dans le sitemap, **parmi les programmes diffusés** |
 | `lot-aleatoire` | lot tiré au hasard, dont le programme est diffusé |
+
+**Lot témoin indisponible.** Un lot se réserve ou se vend : le témoin finirait en 404 ou hors sitemap.
+Un lot témoin est jugé indisponible s'il répond en erreur HTTP, s'il est redirigé, si son JSON-LD annonce
+`Reserved`, `SoldOut`, `OutOfStock` ou `Discontinued`, ou s'il est absent du sitemap. L'audit le remplace alors,
+dans cet ordre, par :
+
+1. le remplaçant retenu au rapport précédent, s'il est toujours disponible (les comparaisons restent stables) ;
+2. un lot du **même programme**, de même type (Appartement, Maison…), par numéro de lot croissant ;
+3. un lot d'un programme diffusé, tiré au hasard.
+
+Cinq candidats au plus sont essayés. Le remplacement est noté dans le rapport (`pages[].replacedFrom` :
+URL d'origine et raison) et sous la ligne du lot dans le mail ; `audit-config.json` n'est pas modifié. Sans
+remplaçant, le lot d'origine est audité et le constat `site-fixed-lot-unavailable` invite à changer le témoin.
+Une page bloquée par le WAF ou injoignable ne déclenche jamais de remplacement.
 
 Un **programme diffusé** est, dans l'export marketing `programs.csv` : publié en B2C
 (`isProgramPublishedB2C = 1`), non archivé (`statutBackbone ≠ archive`) et sans programme parent

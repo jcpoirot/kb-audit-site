@@ -161,9 +161,12 @@ function buildHtml(report, synthese, options = {}) {
       <td colspan="4" style="padding:6px 8px;border-bottom:1px solid ${COLORS.line};text-align:center;color:${COLORS.warning}">bloquee par le WAF - non analysee</td>
     </tr>`;
     }
+    const replaced = p.replacedFrom
+      ? `<br><span style="color:${COLORS.muted};font-size:12px">remplace automatiquement ${esc(p.replacedFrom.url.replace(/^https?:\/\/[^/]+/, ''))} (${esc(p.replacedFrom.reason)})</span>`
+      : '';
     return `<tr>
       <td style="padding:6px 8px;border-bottom:1px solid ${COLORS.line}"><strong>${esc(SLOT_LABELS[p.slot] ?? p.slot)}</strong><br>
-        <a href="${esc(p.url)}" style="color:${COLORS.info};font-size:12px;word-break:break-all">${esc(p.url.replace(/^https?:\/\/[^/]+/, '') || '/')}</a></td>
+        <a href="${esc(p.url)}" style="color:${COLORS.info};font-size:12px;word-break:break-all">${esc(p.url.replace(/^https?:\/\/[^/]+/, '') || '/')}</a>${replaced}</td>
       <td style="padding:6px 8px;border-bottom:1px solid ${COLORS.line};text-align:center"><strong style="color:${scoreColor(p.score)}">${p.score}</strong>
         ${d && d.samePage ? `<br><span style="font-size:12px">${delta(d.scoreBefore, d.scoreAfter)}</span>` : ''}</td>
       <td style="padding:6px 8px;border-bottom:1px solid ${COLORS.line};text-align:center;color:${COLORS.error}">${p.counts.error}</td>

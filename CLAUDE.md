@@ -162,6 +162,10 @@ le sitemap (constats `site-`), puis compare au rapport precedent de `reports/` :
 - la structure JSON-LD (chemins types sans valeurs) et la forme du head ne sont comparees que si
   l'URL est la meme que la veille (`samePage`) : deux lots differents n'ont pas les memes champs ;
 - `alerts` = erreurs de site + defauts critiques nouveaux + changements de structure.
+- un lot temoin qui n'est plus commercialise (HTTP >= 400, redirection, `availability` Reserved/SoldOut/
+  OutOfStock/Discontinued, ou absent du sitemap) est remplace a la volee par `auditFixedPage()` : remplacant
+  du rapport precedent, sinon lot du meme programme et du meme type, sinon lot diffuse au hasard. La page
+  porte `replacedFrom: { url, reason }` ; `audit-config.json` n'est jamais modifie par l'audit.
 - une page qui recoit une page de blocage (`http-blocked`, ex. JSChallenge du WAF Azure Front Door) est
   marquee `blocked` : exclue du score global, des comparaisons et des alertes (une seule alerte `page-blocked`).
   `fetch-page.js` envoie `X-Audit-Token: $AUDIT_TOKEN` aux seuls hotes `*.kaufmanbroad.fr`, et suit les
